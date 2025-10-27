@@ -1147,8 +1147,10 @@ When we apply the Hadamard twice to a state, we get the same state back. Without
  \section{Qubit gates }
 
 As mentioned in Chapter 4, operators are what allow us to do things to quantum states. Below are a collection of the most common single qubit operators. 
+\begin{table}[ht!]
+\centering
 
-\begin{center}
+\label{tab:single_qubit_gates}
 \begin{tabular}{|m{1cm}| m{5cm} | m{3cm} | m{3cm} | m{2cm}|} 
 \hline
  Gate & Description & Effect on $\ket{0}$ & Effect on $\ket{1}$ & Matrix \\ [0.5ex] 
@@ -1168,7 +1170,8 @@ As mentioned in Chapter 4, operators are what allow us to do things to quantum s
  $T$ & Adds a phase of $e^{\pi/4}$ between $\ket{0}$ &  $\ket{0} \rightarrow  \ket{0} $& $\ket{1} \rightarrow e^{i\pi/4}\ket{1}$ & $\begin{bmatrix} 1 & 0 \\ 0 & e^{i\pi/4} \end{bmatrix}$\\ 
 \hline
 \end{tabular}
-\end{center}
+\caption{Common single-qubit gates and their action on the computational basis}
+\end{table}
 
 Sometimes it is easier to perform gates by knowing what they do to the $\ket{0}$, $\ket{1}$ states, sometimes it is easier to do the matrix multiplication. 
 
