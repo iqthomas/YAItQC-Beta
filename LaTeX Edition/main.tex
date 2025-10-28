@@ -686,7 +686,7 @@ We can write out our kets as the simplest column vectors
 
 $$ \ket{H} = 
 \begin{bmatrix}
-1 \\ 0
+0 \\ 1
 \end{bmatrix} $$
 
 Similarly, the tails side up can be represented by the ket
@@ -694,15 +694,15 @@ Similarly, the tails side up can be represented by the ket
 $$
 \ket{T} = 
 \begin{bmatrix}
-0 \\ 1
+1 \\ 0
 \end{bmatrix} $$
 
 This allows $\ket{\psi} $ to be expanded as 
 
 $$ \ket{\psi} = \frac{1}{\sqrt{2}}\left(\begin{bmatrix}
-1 \\ 0
-\end{bmatrix}+ \begin{bmatrix}
 0 \\ 1
+\end{bmatrix}+ \begin{bmatrix}
+1 \\ 0
 \end{bmatrix}\right) $$
 
 By adding the corresponding elements of each vector, this can be simplified to
@@ -721,7 +721,7 @@ We can write this as a column vector as
 
 $$
 \ket{\psi} = \begin{bmatrix}
-\sqrt{P} \\ \sqrt{1-P}
+\sqrt{1-P} \\ \sqrt{P}
 \end{bmatrix}
 $$
 
@@ -775,10 +775,10 @@ Then we transpose, shown by the $^T$, by swapping the rows with the columns. We'
 $$\bra{\psi} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & -i \end{bmatrix} $$
 
 
-In the same way, we can get the coin bras. The $\bra{H}$ is the same as the ket $\ket{H} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ but a row vector where the imaginary part of the complex numbers are all multiplied by $-1$. Since there are no imaginary numbers in $\ket{H}$, the bra $\bra{H}$ is just the transpose of the column vector as
+In the same way, we can get the coin bras. The $\bra{H}$ is the same as the ket $\ket{H} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$ but a row vector where the imaginary part of the complex numbers are all multiplied by $-1$. Since there are no imaginary numbers in $\ket{H}$, the bra $\bra{H}$ is just the transpose of the column vector as
 
 $$
-\bra{H} = (\ket{H}^*)^T = \begin{bmatrix} 1 \& 0 \end{bmatrix}
+\bra{H} = (\ket{H}^*)^T = \begin{bmatrix} 0 & 1 \end{bmatrix}
 $$
 
 Just as with the column vector, we can write a general expression for any bra
@@ -988,15 +988,9 @@ $$ = \frac{1}{2} ( 1 - 1) = 0 $$
 
 \chapter{Single Qubits}
 
-Having covered what quantum states are, this chapter will cover qubits and how we can control them. 
-
 \section{ The unit of information}
 
-Having introduced some of the basic mathematics to describe quantum computing, let's get started. 
-
-Almost all articles or news reports talking about quantum computing start off by explaining how qubits are different from classical bits. This chapter will use the maths from previous chapters to give a better description of these qubits. 
-
-Earlier, the coin example was introduced with the heads \& tails outcomes we can observe. A qubit also has 2 outcomes called $\ket{0}$ \& $\ket{1}$, we can just replace $\ket{H}$ with $\ket{0}$ and $\ket{T}$ with $\ket{1}$. 
+Almost all articles or news reports talking about quantum computing start off by explaining how qubits are different from classical bits. This chapter applies the maths from previous chapters to properly describe superposition. Earlier, the coin example was introduced with the heads \& tails outcomes we can observe. A qubit has the corresponding measurement outcomes $\ket{0}$ \& $\ket{1}$, we can just replace $\ket{H}$ with $\ket{0}$ and $\ket{T}$ with $\ket{1}$. 
 
 $$
 \ket{0} = \begin{bmatrix} 1 \\ 0 \end{bmatrix} ; \ket{1} = \begin{bmatrix} 0 \\ 1 \end{bmatrix} 
@@ -1008,9 +1002,7 @@ Just as with the coins, our qubits can be in a superposition of $\ket{0}$ \& $\k
 
 \section{ The Bloch Sphere }
 
-Dirac notation is really useful for doing algebra with quantum states. We can model how the qubits change using vectors and calculate probabilities with the inner product. One limitation of Dirac notation is that it is difficult to visualise quantum states as it does not have a diagram to represent the state vector on. 
-
-The Bloch sphere is a useful tool used to represent the state of a qubit. Below, the quantum state $\ket{\psi}$ is represented on the Bloch Sphere. 
+Dirac notation is really useful for doing algebra with quantum states. We can model how the qubits change using vectors and calculate probabilities with the inner product. One limitation of Dirac notation is that it is difficult to visualise quantum states as it does not have a diagram to represent the state vector on. The Bloch sphere is a useful tool used to represent the state of a qubit. Below, the quantum state $\ket{\psi}$ is represented on the Bloch Sphere. 
 
 \begin{figure}[ht!]
     \centering
@@ -1021,14 +1013,6 @@ The Bloch sphere is a useful tool used to represent the state of a qubit. Below,
 
 
 \subsection{The north \& south poles}
-
-In 1922 one of the quintessential experiments led to a remarkable breakthrough in our understanding of quantum theory. 
-
-\begin{enumerate}
-    \item Electron spin up \& down
-    \item Separation by magnetic field
-    \item Relation to state preparation, superposition \& measurement 
-\end{enumerate}
 
 At the top of the sphere  is the state $\ket{0}$, at the bottom is the state $\ket{1}$. Our state $\ket{\psi}$ is somewhere in between so it is a superposition of $\ket{0}$ \& $\ket{1}$. The closer $\ket{\psi}$  is to the top, the greater the probability of measuring $\ket{0}$, the same is true for the bottom with $\ket{1}$. The angle $\theta$ between the $\ket{0}$ \& $\ket{\psi}$ gives us these probabilities. 
 
@@ -1043,26 +1027,11 @@ Similarly for the probability of $\ket{1}$
 
 $$P(\ket{1}) = |\braket{0|\psi}|^2 = (\sin{\theta/2})^2$$
 
-The z-axis is where the $\ket{0}$ \& $\ket{1}$ are, for that reason the z-axis is known as the computational basis. In addition we have the x \& y axis which correspond to different states. 
-
-A useful tool for understanding the Bloch sphere [can be found here](https://javafxpert.github.io/grok-bloch/)
-
-
-\subsection{Exercise 5.1: Where on the sphere}
-
-We know the superposition state $\ket{+}$ has equal probabilities of $\ket{0}$ \& $\ket{1}$. Where on the Bloch sphere would this state be represented? What is the angle $\theta$ that would describe this state?
-
-
+The z-axis is where the $\ket{0}$ \& $\ket{1}$ are, for that reason the z-axis is known as the computational basis. In addition we have the x \& y axis which correspond to different states. A useful tool for understanding the Bloch sphere [can be found here](https://javafxpert.github.io/grok-bloch/)
 
 \section{It's not just a phase!} \label{It's not just a phase!}
 
-To show probabilities, a single angle is enough. So why do we need a sphere? 
-
-There is another important parameter that describes a qubit: the phase. 
-
-At last, our coins will not work to describe phase, there is no analogue in classical computing, nor in simple probability.
-
-For example, earlier the flip coin operator $F$ had this form:
+To show probabilities, a single angle is enough. So why do we need a sphere? There is another important parameter that describes a qubit: the phase. At last, our coins will not work to describe phase, there is no analogue in classical computing, nor in simple probability. For example, earlier the flip coin operator $F$ had this form:
 
 $$
 F =  \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}
@@ -1133,17 +1102,6 @@ Phases can be used to encode information, such as with the quantum Fourier trans
 
 
 
-\subsection{Exercise 5.2 Back to the start}
-
-Apply $H$ twice to $\ket{1}$ and verify the state we end up with is $\ket{1}$. 
-
-\subsection{Exercise 5.3 The coin doesn't work}
-
-When we apply the Hadamard twice to a state, we get the same state back. Without doing any maths, consider throwing a coin. Why does throwing the coin twice not guarantee you get back the side you started with? 
-
-\vspace{5mm} %5mm vertical space
-
-
  \section{Qubit gates }
 
 As mentioned in Chapter 4, operators are what allow us to do things to quantum states. Below are a collection of the most common single qubit operators. 
@@ -1161,13 +1119,13 @@ As mentioned in Chapter 4, operators are what allow us to do things to quantum s
 \hline
  $Y$ & Y: Rotation by angle $\pi$ around the y-axis of the Bloch sphere & $\ket{0} \rightarrow  i\ket{1} $ & $\ket{1} \rightarrow -i\ket{0} $ & $\begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix}$ \\
 \hline
- $Z$ & Z: Adds a phase of $e^{i\pi}$ to $\ket{1}$&$\ket{0} \rightarrow \ket{0}$&$\ket{1} \rightarrow -\ket{1}$ &$\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$  \\
+ $Z$ & Z: Adds a phase of $\pi$ to $\ket{1}$&$\ket{0} \rightarrow \ket{0}$&$\ket{1} \rightarrow -\ket{1}$ &$\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$  \\
 \hline
  $H$ & Hadamard: Creates the superposition state & $\ket{0} \rightarrow \frac{1}{\sqrt{2}} ( \ket{0} + \ket{1})$ & $\ket{1} \rightarrow \frac{1}{\sqrt{2}} ( \ket{0} - \ket{1})$ & $\frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} $\\
 \hline
- $S$ & Adds a phase of $e^{\pi/2}$ between $\ket{0}$ &$\ket{0} \rightarrow  \ket{0} $ &$\ket{1} \rightarrow e^{i\pi/2}\ket{1}$  & $\begin{bmatrix} 1 & 0 \\ 0 & e^{i\pi/2} \end{bmatrix}$\\
+ $S$ & Adds a phase of $\pi/2$ between $\ket{0}$ &$\ket{0} \rightarrow  \ket{0} $ &$\ket{1} \rightarrow e^{i\pi/2}\ket{1}$  & $\begin{bmatrix} 1 & 0 \\ 0 & e^{i\pi/2} \end{bmatrix}$\\
 \hline
- $T$ & Adds a phase of $e^{\pi/4}$ between $\ket{0}$ &  $\ket{0} \rightarrow  \ket{0} $& $\ket{1} \rightarrow e^{i\pi/4}\ket{1}$ & $\begin{bmatrix} 1 & 0 \\ 0 & e^{i\pi/4} \end{bmatrix}$\\ 
+ $T$ & Adds a phase of $\pi/4$ between $\ket{0}$ &  $\ket{0} \rightarrow  \ket{0} $& $\ket{1} \rightarrow e^{i\pi/4}\ket{1}$ & $\begin{bmatrix} 1 & 0 \\ 0 & e^{i\pi/4} \end{bmatrix}$\\ 
 \hline
 \end{tabular}
 \caption{Common single-qubit gates and their action on the computational basis}
@@ -1179,13 +1137,6 @@ A more comprehensive list of gates \href{https://raw.githubusercontent.com/qiski
 
 
 
-\subsection{Exercise 5.4}
-
-By considering the effect on $\ket{0}$ \& $ \ket{1}$, or by doing matrix multiplication, calculate the following states:
-
-a. $ XZ\ket{1}$  
-b. $ XH\ket{+} $  
-c. $ XYZ\ket{0} $
 
 
 \subsection{Aside: gates vs operators}
@@ -1218,11 +1169,6 @@ This gives a phase shift of $\phi$ between $\ket{0}$ \& $\ket{1}$
 
 
 
-\subsection{Exercise 5.5}
-By using $\theta = \pi/2$ apply $R_y(\pi/2)$ to the state $\ket{1}$. What gate does $R_y(\pi/2)$ do? 
- 
-\subsection{Exercise 5.6} 
-The X gate turns $\ket{0}$ to $\ket{1}$ and $\ket{1}$ to $\ket{0}$. By considering angles on the Bloch sphere, what is the angle $\theta$ such th
 
 \section{ The Universal Quantum Gate }
 
@@ -1236,13 +1182,10 @@ Just as we can reach any point on the Bloch Sphere with $\theta$ \& $\phi$ we ca
 
 The set of all gates that can be made from $U$ are known as $SU(2)$.
 
-\subsection{Exercise 5.7}
-Which gate in the list above is represented by  $U(\theta, \phi, \lambda) = U(0,0,0)$ 
 
+% \section{ Operators in Ket-Bra Form}
 
-\section{ Operators in Ket-Bra Form}
-
-There is a very elegant way to express operators using Dirac notation. If one 
+% There is a very elegant way to express operators using Dirac notation. If one 
 
 \section{ Bonus: Beyond Bits }
 
@@ -1258,7 +1201,24 @@ Qudits are much less commonly used than qubits for a few reasons
 \end{itemize}
 
 \section{Chapter Exercises}
-at $R_y(\theta) = X$
+
+
+\begin{enumerate}
+    \item Where on the sphere? We know the superposition state $\ket{+}$ has equal probabilities of $\ket{0}$ \& $\ket{1}$. Where on the Bloch sphere would this state be represented? What is the angle $\theta$ that would describe this state?
+    \item Back to the start. Apply $H$ twice to $\ket{1}$ and verify the state we end up with is $\ket{1}$. 
+    \item  The coin doesn't work. When we apply the Hadamard twice to a state, we get the same state back. Without doing any maths, consider throwing a coin. Why does throwing the coin twice not guarantee you get back the side you started with? 
+    \item By considering the effect on $\ket{0}$ \& $ \ket{1}$, or by doing matrix multiplication, calculate the following states:
+    
+    \begin{enumerate}[a.]
+        \item \( XZ\ket{1} \)
+        \item \( XH\ket{+} \)
+        \item \( XYZ\ket{0} \)
+    \end{enumerate}
+    \item By using $\theta = \pi/2$ apply $R_y(\pi/2)$ to the state $\ket{1}$. What gate does $R_y(\pi/2)$ do? 
+    \item The X gate turns $\ket{0}$ to $\ket{1}$ and $\ket{1}$ to $\ket{0}$. By considering angles on the Bloch sphere, what is the angle $\theta$ such that $R_y(\theta) = X$
+    \item Which gate in the list above is represented by  $U(\theta, \phi, \lambda) = U(0,0,0)$ 
+\end{enumerate}
+
 
 
 \section{Chapter 5 Summary }
