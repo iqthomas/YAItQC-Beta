@@ -3,11 +3,8 @@
 # TODO: Make this more readable on laptops
 
 import numpy as np
-from numpy import * #Use with caution as this causes packages to mess with each other
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider, Button
-import random
-# %matplotlib 
 plt.style.use('default')
 
 
@@ -27,9 +24,10 @@ fig, ax = plt.subplots()
 line, = plt.plot(x, f(x, a), label = 'Quantum factorisation')
 g = np.exp(x**1/3)
 plt.plot(x,g, label = 'Classical Factorisation' )
-ax.set_xlabel('Size of problem')
+ax.set_xlabel('Number of digits')
 ax.set_ylabel('Time taken to solve')
 ax.set_yscale('log')
+ax.legend()
 ax.set_title("Shor's Factoring Algorithm")
 
 
@@ -46,9 +44,19 @@ speed_slider = Slider(
     valinit=0.1,
 )
 
+# Horizontal line for crossover point
+crossover_line = ax.axhline(y=0, color='red', linestyle='--', label='Crossover point', alpha=0.7)
+
 # The function to be called anytime a slider's value changes
 def update(val):
     line.set_ydata(f(x, speed_slider.val))
+    # Find intersection point
+    quantum = f(x, speed_slider.val)
+    diff = np.abs(quantum - g)
+    intersection_idx = np.argmin(diff)
+    crossover_y = g[intersection_idx]
+    crossover_line.set_ydata(crossover_y)
+    ax.legend()
     fig.canvas.draw_idle()
 
 

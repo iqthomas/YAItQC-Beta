@@ -6,6 +6,7 @@
  left=20mm,
  top=20mm,
  }
+ \usepackage{microtype}
 \usepackage[utf8]{inputenc}
 \usepackage{braket}
 \usepackage{graphicx}
@@ -17,6 +18,7 @@
 \usepackage{bookmark}
 \usepackage[scaled]{helvet}
 \renewcommand\familydefault{\sfdefault}
+\raggedbottom
 
 % \graphicspath{ {./images/} }
 
@@ -60,11 +62,11 @@ In the early 20th century, a German physicist (by the cool name of Max Planck) w
     \end{minipage}
 \end{figure}
 
-This concept of quantisation of energy is where the quantum comes from. Whilst this concept is less significant to quantum computing, it is still worth mentioning. The reason for this is that the transistor that powers all digital electronics is built upon this concept. Thus all computations using this technology (the integrated circuit) are computers running on quantum mechanics. This is not to say they are quantum computers simply that they are fundamentally built upon quantum physics, as are you, I, and everything we can see and touch. Quantum is nothing more than a limit, beyond which classical physics fails to provide an explanation. \textit{Quantum technologies supersede the limits of what is possible with classical technologies.}
+The quantisation of energy is where the word quantum comes from. Whilst this concept is less significant to quantum computing, it is still worth mentioning. The reason for this is that the transistor that powers all digital electronics is built upon this concept. Thus all computations using this technology (the integrated circuit) are computers running on quantum mechanics. This is not to say they are quantum computers simply that they are fundamentally built upon quantum physics, as are you, I, and everything we can see and touch. Quantum is nothing more than a limit, beyond which classical physics fails to provide an explanation. \textit{Quantum technologies supersede the limits of what is possible with classical technologies.}
 
 Beyond the quantisation of energy, there are quantum phenomena which are much more significant to quantum computing: \textit{superposition \& entanglement}. 
 
-\section{So what happened to Schrödinger’s cat?}
+\section{What happened to Schrödinger’s cat?}
 
 You may have heard of a very special cat associated with another German physicist, Schrödinger. In this analogy, a cat is kept inside a black box that the observer can't view inside. Within the box, there is also a vial of poison with a radioactive source. The radioactive source has an equal probability of decaying or not decaying in some time. If the source decays, the poison is released, and the cat dies. otherwise, the cat is just fine. Until the observer opens the box they don't know if the cat is dead or alive. 
 
@@ -99,9 +101,7 @@ Tossing two unbiased coins is effectively the same as tossing the same coin twic
 
 Instead of revealing the combined coin, the two coins are separated. Since the coin at the bottom has H facing into the ground, it must have the T side facing upwards. This leaves us 2 coins one H facing upwards and the other T facing upwards. Without revealing the coins they are shuffled. 
 
-At this point, guessing either of the coins would have a 50\% chance of getting the right outcome- the same as for one coin from a pair of simultaneously tossed coins.  
-
-But if only one of the coins is revealed, say the H coin, then it is instantly known that the other one must be a T. Suddenly guessing the state of the second coin has a 100\% chance of success whereas with the separate coin tosses revealing one made no difference to guessing the other. These linked probabilities are analogous (with some significant caveats) to an entangled quantum state. Entanglement can be thought of as these linked probabilities- it is impossible to describe one coin without describing the other.
+At this point, guessing either of the coins would have a 50\% chance of getting the right outcome- the same as for one coin from a pair of simultaneously tossed coins. At this point, if only one of the coins is revealed, say the H coin, it is instantly known that the other one must be a T. Suddenly guessing the state of the second coin has a 100\% chance of success whereas with the separate coin tosses revealing one made no difference to guessing the other. These linked probabilities are analogous (with some significant caveats) to an entangled quantum state. Entanglement can be thought of as these linked probabilities- it is impossible to describe one coin without describing the other.
 
 Einstein argued that before the coins are revealed, they must have some side facing up. Looking at the coin only revealed information to us, the observer. In his view, some "hidden variables" were needed to make quantum mechanics fit with the classical intuition. Subsequent experiments demonstrated that this was not the case. It is as though both coins are not flat on the table but spinning in mid-air. Their spins are perfectly out of phase such that each coin is random right up until we see it. 
 
@@ -219,15 +219,11 @@ There are many industries expecting significant value creation from quantum comp
     
 \end{itemize}
 
-Across each of these areas, and many that have yet to be discovered, established tech companies and start-ups are working to come up with new ideas on how QC can be used. Predicting when these solutions might become availible, or how valuable they might be, is a guessing game for investors and governments. In addition to potential direct impacts, there are a lot of potential benefits to developing the technology to engineer qubits. Being able to measure qubits better can help develop quantum sensors with applications in healthcare \& navigation. 
+Across each of these areas, and many that have yet to be discovered, established tech companies and start-ups are working to come up with new ideas on how QC can be used. Predicting when these solutions might become available, or how valuable they might be, is a guessing game for investors and governments. In addition to potential direct impacts, there are a lot of potential benefits to developing the technology to engineer qubits. Being able to measure qubits better can help develop quantum sensors with applications in healthcare \& navigation. 
 
 \section{Quantum Advantage} 
 
-If our conventional computers perform so many tasks better, there must be some motivation for quantum computing being such an exciting area of research. The maths is beautiful, the physics is exotic, and the engineers will never run out of problems to solve. But the funding has to come from somewhere. Quantum computing is expected to be more useful than a glorified coin tossing simulator. Despite the limitations in state-of-the-art quantum computing machines, it is known of a few valuable applications where quantum algorithms could \textit{theoretically outperform} the best available classical solution. Under this condition, we could define quantum advantage. 
-
-\textbf{Quantum advantage occurs when adding a quantum computer gives significant benefit to the user compared to the best available purely classical alternative.} 
-
-The choice of "significant benefit" is arbitrary and ultimately up to the people who use the computer. For example, a few different ways a quantum computer could add value: 
+If our conventional computers perform so many tasks better, there must be some motivation for quantum computing being such an exciting area of research. The maths is beautiful, the physics is exotic, and the engineers will never run out of problems to solve. But the funding has to come from somewhere. Quantum computing is expected to be more useful than a glorified coin tossing simulator. Despite the limitations in state-of-the-art quantum computing machines, it is known of a few valuable applications where quantum algorithms could \textit{theoretically outperform} the best available classical solution. Under this condition, we could define quantum advantage. \textbf{Quantum advantage occurs when adding a quantum computer gives significant benefit to the user compared to the best available purely classical alternative.} The choice of "significant benefit" is arbitrary and ultimately up to the people who use the computer. For example, a few different ways a quantum computer could add value: 
 
 \begin{itemize}
     \item Speed: Solve a problem faster for better decision making
@@ -235,10 +231,12 @@ The choice of "significant benefit" is arbitrary and ultimately up to the people
     \item Efficiency: Consume less energy over the entire process and thus cost less to run 
     \item New approaches: Enable entirely new computational models \& solutions to solve problems that previously couldn't be solved
 \end{itemize}
-    
-As a theoretical research area, the question of what could be done with a perfect quantum computer can provide some reasoning for how speed could provide the advantage. 
 
-As the problem becomes bigger and more complicated, the time taken for the computer, classical or quantum, to find a solution increases. If there is a speedup for a quantum algorithm, there is some problem size for which the quantum algorithm can solve it in fewer steps. For any problem above this crossover size, the time saved using a quantum algorithm grows with the problem size. 
+For any potential benefit, there are two methods by which we can claim a quantum advantage. The most common approach is theoretical. Problems that can be modelled mathematically in such a way that is convenient for a quantum computer can be targeted. The motivation for using the quantum computer provides inspiration for an algorithm. Theoretical models give us algorithms where the number of steps required to solve the problem can be predicted. Given the total length of this computation, assumptions can then be made about the hardware. For instance, we could specify how quickly a quantum computer can execute layers of a circuit and then infer how long it would take to finish the algorithm. Such an analysis is usually called a resource estimate, and can motivate roadmaps for hardware companies. 
+
+The comparison with classical computing adds another dimension to the quantum advantage. There will always be classical overheads on any quantum circuit, so a quantum circuit of the same number of operations as a classical circuit will always be slower. Theoretical analysis can account for this by predicting the total time to solution, accounting for some fixed overheads. 
+
+For a small problem, for example, finding the shortest path in a small village, the overhead of using a QC will likely never become viable for any advantage. Instead of considering fixed problem sizes (where the problem size is usually described by how many possible solutions exist) the theoretical analysis considers a range of problem sizes. As the number of possible solutions increases, the time taken for the computer, classical or quantum, to find a solution gets longer. If there is a speedup for a quantum algorithm, there is some problem size for which the quantum algorithm can solve it in fewer steps. Once the problem is bigger than this crossover point, the advantage of using the quantum computer grows. 
 
 \begin{figure}[ht!]
     \centering
@@ -265,15 +263,9 @@ In recent years, hardware providers have made a big emphasis of increasing the s
 
 Up till now, this book as described quantum computing qualitatively. An introduction to the introduction. To continue this journey, it is essential to give a mathematical description that illustrates the beauty of the symmetry and showcases the power of the theory. To begin with, we must go beyond the limits of reality. 
 
-\section{Real and imaginary quantities}
+\section{Real and imaginary numbers}
 
-So far everything in this textbook has been described using real numbers- that is the set numbers you can produce on most calculators. For quantum computing, we require going beyond to complex numbers. You may be wondering why we need imaginary numbers. The most important equation in all of quantum mechanics, the Schrödinger equation, features imaginary numbers. 
-
-$$ i\hbar \frac{\partial{}}{\partial{t}}\ket{\psi} = \hat{H}\ket{\psi} $$
-
-Where $i = \sqrt{-1}$, $\hbar$ is the reduced Planck constant, $\hat{H}$ is a special operator called the Hamiltonian, and $\ket{\psi}$ is the state vector for the quantum system. All of those words will make more sense in the coming chapters. The Schrödinger equation describes how quantum systems change with time. Whilst it is very important for quantum mechanics, the physics is beyond the scope of this course. 
-
-\subsection{ The square root of -1}
+So far everything in this textbook has been described using real numbers- that is the set numbers you can produce on most calculators. For quantum computing, we require going beyond to complex numbers. 
 
 There are two square roots of $4$: $+2$ \& $-2$. For numbers that aren't integers there are algorithms we can run on our calculators to work out the roots to arbitrary precision. In physics there are many situations in which the only valid solution to an equation calls for the square root of a negative number. To make this work, it is necessary to first define the square root of $-1$ as $i = \sqrt{-1}$. 
 
@@ -312,10 +304,12 @@ $z^* = x - iy$
 In the figure below the complex number $z$ is shown along with its complex conjugate. In this diagram $\bar{z}$ is used rather than $z^*$ but it means the same thing.  
 
 
-\begin{center}
+\begin{figure}[ht!]
+    \centering
     \includegraphics[scale=0.5]{images/Complex_conjugate_picture.svg.png}
-        \caption{The complex number $z$ and its complex conjugate $\bar{z}$.  Note how the real part is the same, but the imaginary part is on the negative axis. }
-\end{center}
+    \caption{The complex number $z$ and its complex conjugate $\bar{z}$.  Note how the real part is the same, but the imaginary part is on the negative axis.}
+    \label{fig:complex_conjugate}
+\end{figure}
 
  \subsection{ Magnitude of complex numbers }
 
@@ -468,56 +462,48 @@ The inner product depends on the angle between the vectors. If the vectors are p
 
 If two vectors have no components in common, their inner product will be zero. This can be shown by two vectors that have an angle of $ 90^{\circ} $ between them.  We call these vectors perpendicular. In quantum mechanics, the preferred term is \textbf{orthogonal} which means the same thing but applies to more than just vectors. 
 
-For example the vectors $\ket{p} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ \& $\ket{q} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$ have a inner product  of 0. 
+For example the vectors $\ket{p} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ ; $\ket{q} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$ have a inner product  of 0. 
 
-$$ \begin{bmatrix} 1^* \& 0^* \end{bmatrix}  \begin{bmatrix} 0 \\ 1 \end{bmatrix} = (1 \times 0) + (0 \times 1) = 0$$
+$$ \begin{bmatrix} 1^* & 0^* \end{bmatrix}  \begin{bmatrix} 0 \\ 1 \end{bmatrix} = (1 \times 0) + (0 \times 1) = 0$$
 
-\subsection{Exercise 3.5}
-
-Compute the inner product for the vectors 
-
-$$ \ket{w} = \frac{1}{\sqrt{2}} \begin{bmatrix} i \\ 1 \end{bmatrix} ; \ket{z} = \frac{1}{\sqrt{3}} \begin{bmatrix} \sqrt{2} \\ i \end{bmatrix}$$
-
-i. $\braket{w|z}$
-
-ii. $\braket{z|w}$
-
-iii. Bonus question: Compare i. ii. . Is the result the same as from Exercise 3.2 iv? 
-If not, what has changed?
-
-
-
-\subsection{ Matrices}
+\section{ Matrices}
 
 Another object, closely related to a vector, is a matrix. A matrix is just an array of numbers which you can perform a matrix product on. All the quantum gates will be represented as matrices, so understanding how they work will be essential for quantum computations. Matrices are usually denoted by capital letters, for example $M$
 
-$$
-M = \begin{bmatrix} 1 & 2  \\ 3 & 4 \end{bmatrix}
-$$
+$$ M = \begin{bmatrix} 1 & 2  \\ 3 & 4 \end{bmatrix} $$
 
 $M$ has 4 elements: 1,2,3 \& 4. 
 
+Each element in $M$ has an index: a pair of numbers that gives the position in the matrix. This is a bit like how map coordinates indicate a position. Starting from the top left, the index increases from left to right or from top to bottom. For example, the bottom left element (3) of $M$ would have the index $M_{10}$ as the first row, zeroth column. The choice of starting from zero is made to be consistent with binary and is also useful for programming languages like python that are widely used in quantum computing. 
+
+$M$ could also be written as a collection of indices
+
+$$ M = \begin{bmatrix} M_{00} & M_{01}  \\ M_{10} & M_{11} \end{bmatrix} $$
+
+
 \subsection{ Matrix-vector product} 
 
-As well as storing information, matrices can be used to transform vectors. This is done using the matrix-vector product. The matrix $M$ acting on the vector $\ket{a}$ is denoted as $M\ket{a}$. The matrix multiplication is done by multiplying the corresponding elements of $M$ \& $\ket{a}$. Starting from the first row of $M$ we multiply out the elements of $M$ \& $\ket{a}$ starting from the left and add them up. Let's call the transformed vector $\ket{a'}$. We can compute $\ket{a'}$ by doing the matrix-vector product of $M$ on $\ket{a}$ as
 
-$$
-\ket{a'} = M\ket{a}
-$$
+Matrices, or more generally 2D arrays of numbers, are useful for storing information. The pixels on a screen have colour intensity values that can be efficiently stored as a matrix where the number of rows and columns is equal to the horizontal and vertical pixels on a screen (1080 by 1920 is a popular choice). As well as storing information, matrices can be used to transform vectors. This is done using the matrix-vector product. The matrix $M$ acting on the vector $\ket{a}$ is denoted as $M\ket{a}$. The matrix multiplication is done by multiplying the corresponding elements of $M$ \& $\ket{a}$. Starting from the first row of $M$ we multiply out the elements of $M$ with the elements of $\ket{a}$ starting from the left and add them up. Let's call the transformed vector $\ket{a'}$. We can compute $\ket{a'}$ by doing the matrix-vector product of $M$ on $\ket{a}$ as
+
+$$ \ket{a'} = M\ket{a} $$
 
 Explicitly calculating this gives us
 
-$$
-\ket{a'} =  \begin{bmatrix} 1 & 2  \\ 3 & 4 \end{bmatrix} \begin{bmatrix} 1 \\ 2 \end{bmatrix}
-$$
+$$ \ket{a'} =  \begin{bmatrix} 1 & 2  \\ 3 & 4 \end{bmatrix} \begin{bmatrix} 1 \\ 2 \end{bmatrix} $$
 
-$$
-= \begin{bmatrix} (1 \times 1) + (2 \times 2) \\ (3 \times 1) + (4 \times 2) \end{bmatrix}
-$$
+$$ = \begin{bmatrix} (1 \times 1) + (2 \times 2) \\ (3 \times 1) + (4 \times 2) \end{bmatrix} $$
 
-$$
-\ket{a'} = \begin{bmatrix} 5 \\ 11 \end{bmatrix}
-$$
+$$ \ket{a'} = \begin{bmatrix} 5 \\ 11 \end{bmatrix} $$
+Matrix multiplication follows some of the same relationships as multiplying numbers, but not all of them. 
+
+\subsection{Multiple matrices}
+
+A matrix transforming a vector can be thought of as an instruction. The original vector represents some initial starting position (like a coordinate x,y) and the matrix maps that point onto a new point (x', y'). Matrices can be applied in a sequence. Starting from the vector $\ket{a}$, applying the matrix $A$ followed by $B$ would look like 
+
+$$ BA\ket{a} $$
+
+In linear algebra the order is read from right to left, whatever is the furthest to the right happens first and whatever is furthest to the left happens last. Matrix multiplication follows some of the same relationships as multiplying numbers, but not all of them. In regular multiplication, the order in which numbers are multiplied doesn't matter. $ 5 \times 3 = 3 \times 5 = 15 $. For any numbers $a, b$, $a \times b = b \times a$. The same cannot be said for any two matrices, $ AB \neq BA $. This relationship, whether the order of operations matters, is defined as whether $A$ and $B$ commute. Integer multiplication is commutative, matrix multiplication does not usually commute.  
 
 \subsection{ Inverse matrices }
 
@@ -531,41 +517,27 @@ $$
 
 By using our equation for $\ket{v'} = M\ket{a}$ from earlier, this gives us 
 
-$$
-M^{-1}M\ket{a} = \ket{a}
-$$
+$$ M^{-1}M\ket{a} = \ket{a} $$
 
 Notice how $\ket{a}$ is completely unchanged from applying $M$ and then $M^{-1}$. The operation $M^{-1}M$ effectively does nothing. The same would be true if we applied $M^{-1}$ first and then $M$ as $MM^{-1}$. The general name for the "do nothing" matrix is the identity. The identity is
 
 $$M^{-1}M = MM^{-1} = I $$
 
-As a matrix, the identity looks like 
-
-$$ 
-I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
-$$
-
 Before we had $\ket{a'} = M\ket{a}$. And now we would like to go backwards from $\ket{a'}$ to $\ket{a}$. This is done using the inverse of $M$: $M^{-1}$
 
-$$
- M^{-1}\ket{a'} = \ket{a} 
-$$
+$$ M^{-1}\ket{a'} = \ket{a} $$
 
 Notice how we can take the original equation and do the matrix multiplication by $M^{-1}$ and get the same result
 
-$$
-M^{-1}\ket{a'} = M^{-1}M\ket{a} = \ket{a}
-$$
+$$ M^{-1}\ket{a'} = M^{-1}M\ket{a} = \ket{a} $$
 
 $M^{-1}$ is cancelling out $M$ so that there is no effect on $\ket{a}$. The matrix that represents this "no effect" is called the identity $I$ defined by 
 
-
 $$ I\ket{v} = \ket{v}$$
 
-This gives us the important relation 
+As a matrix, the identity looks like 
 
-
-$$ M^{-1}M = MM^{-1} = I $$
+$$ I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$$
 
 \subsection{ Unitary matrices} 
 
@@ -581,37 +553,43 @@ The conjugate transpose is the same process as it is to turn a ket (column vecto
 
 All quantum gates are unitary matrices, it is very common to see the term unitary when talking about any quantum circuit. 
 
-
 \section{Chapter Exercises}
 \begin{enumerate}
     \item Consider the complex numbers 
 
     $$ z = 4 + 5i ; y = -3 + i; m = -2 - 2i $$
-
-    i.What is $Re(z)$? 
-    ii. What is $Im(m)$? 
-    iii. Sketch z,y,m on the Argand diagram
+    \begin{enumerate}[i]
+        \item What is $Re(z)$? 
+        \item What is $Im(m)$? 
+        \item Sketch z,y,m on the Argand diagram
+    \end{enumerate}
 
     \item Consider the complex number $z = 3 + 5i$ . 
+        \begin{enumerate}[i]
+            \item What is the complex conjugate of $z$, $z^*$?
+            \item What is the magnitude of $z$?
+            \item What is the magnitude of $z^*$?
+        \end{enumerate}
 
-    i. What is the complex conjugate of $z$, $z^*$?
- 
-    ii. What is the magnitude of $z$?
+    \item Compute the inner product for the vectors 
 
-    iii. What is the magnitude of $z^*$?
+        $$ \ket{w} = \frac{1}{\sqrt{2}} \begin{bmatrix} i \\ 1 \end{bmatrix} ; \ket{z} = \frac{1}{\sqrt{3}} \begin{bmatrix} \sqrt{2} \\ i \end{bmatrix}$$
 
-    \item Imagine the vector $\ket{v}$ given by 
+        i. $\braket{w|z}$
 
-    $$\ket{v} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$$
+        ii. $\braket{z|w}$
 
-    i. What is the $0^{th}$ component of $\ket{v}$ ? What about the $1^{st}$ component?
+        iii. Bonus question: Compare i. ii. . Is the result the same as from Exercise 3.2 iv? 
+        If not, what has changed?
 
-    ii. Write $\ket{v}$ in the form 
 
-    $$ \ket{v} = a\begin{bmatrix} 1 \\ 0 \end{bmatrix} + b \begin{bmatrix} 0 \\ 1 \end{bmatrix} $$
-
-    iii. Write down the vector $5\ket{v}$ and describe what has changed to the vector  
-
+    \item Imagine the vector $\ket{v}$ given by $$\ket{v} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$$
+        \begin{enumerate}[i]
+            \item What is the $0^{th}$ component of $\ket{v}$ ? What about the $1^{st}$ component?
+            \item Write $\ket{v}$ in the form $$ \ket{v} = a\begin{bmatrix} 1 \\ 0 \end{bmatrix} + b \begin{bmatrix} 0 \\ 1 \end{bmatrix} $$
+            \item Write down the vector $5\ket{v}$ and describe what has changed to the vector  
+            
+        \end{enumerate}
 
     \item Let the vector $\ket{q}$ be given as 
 
@@ -626,7 +604,9 @@ All quantum gates are unitary matrices, it is very common to see the term unitar
     
     \end{enumerate}
 \end{enumerate}
+
 \section{Chapter Summary }
+
 \begin{itemize} 
     \item Vectors are a collection of numbers stored in a row or column
     \item Vectors can be added to each other or multiplied by a scalar
@@ -639,25 +619,18 @@ All quantum gates are unitary matrices, it is very common to see the term unitar
 \end{itemize}
 
 \chapter{Dirac Notation}
-This chapter explains a bit of the framework for quantum computing using the maths from the last chapter. It's like learning the language of quantum computing, first the grammar was introduced in chapter 3, now we are defining the words.  
 
-\section{ Information inside a computer }
+This chapter explains a bit of the framework for quantum computing using the maths from the last chapter. It's like learning the language of quantum computing, first the rules of the grammar were introduced in chapter 3, now that grammar is being applied to create sentences. 
 
-When using a computer every day, it's important to be able to extract useful information from the computer. For instance, reading emails requires being able to access the information in your inbox. 
+\section{ How to describe qubits}
 
-Unlike reading emails, quantum computing works at the lowest level of the system. It would be like directly accessing the bits in a classical computer. Instead of working with bits, quantum computing works with qubits. To do anything at all with qubits, it's important to describe what state they're in. The state of a qubit is described by something known as a ket. 
+When using a computer every day, it's important to be able to extract useful information from the computer. For instance, reading emails requires being able to access the information in your inbox. Unlike reading emails, quantum computing works at the lowest level of the system. It would be like directly accessing the voltages across transistors that make up bits in a classical computer. Instead of working with bits, quantum computing works with qubits. To do anything at all with qubits, it's important to describe what state they're in. The state of a qubit is described by something known as a ket. 
 
-
-\subsection{ How to describe qubits?}
-
-
-How do we describe the state of our qubits? It is easy to think this would require a very complicated mechanism. For us, it is as simple as a column vector! The state of our quantum computer can be described with a \textbf{column vector known as a ket}. Because it is a state represented by a vector, we call this the \textbf{state vector}. Usually, the state of our quantum computer is given by the ket $\ket{\psi}$.
+How do we describe the state of our qubits? It is easy to think this would require a very complicated mechanism. Thankfully, it is as simple as a column vector! The state of our quantum computer can be described with a \textbf{column vector known as a ket}. Because it is a state represented by a vector, we call this the \textbf{state vector}. Usually, the state of our quantum computer is given by the ket $\ket{\psi}$.
 
 The coins still work as an example for the state vector. If the coin is heads up we can use the ket $\ket{H}$, if it's tails up it is $\ket{T}$. When the coin is spinning in the air, the superposition state (see section 1.3), this state can be represented by the state $\ket{\psi}$: 
 
-$$
-\ket{\psi} = \frac{1}{\sqrt{2}}(\ket{H} + \ket{T})
-$$
+$$ \ket{\psi} = \frac{1}{\sqrt{2}}(\ket{H} + \ket{T}) $$
 
 Since the coin has a $\frac{1}{2}$ probability of being in either heads or tails, you might have expected to see $\frac{1}{2}$ instead of $\frac{1}{\sqrt{2}}$. The reason for this is that in quantum mechanics, a state is described with an amplitude (the number outside the ket) proportional to the square root of the probability. 
 
@@ -704,31 +677,19 @@ $$
 \end{bmatrix}
 $$
 
+\subsection{N-level quantum system}
 
+In general, our quantum computer can take a lot more than 2 possible outcomes. Thankfully we can just add a row to our column vector for every possible outcome. So we can describe our state in terms of each possible outcomes it can take. Our quantum computer can output any number up to some maximum number of outcomes.  We can write the state of any quantum computer in terms of all the possible states (numbers) we can get from it
 
+$$ \ket{\psi} = \sum_{i = 0}^{N_1} c_i \ket{i}$$
 
-\subsection{How to describe the qubits}
+Where the index $i$ indicates a possible state we can observe the quantum system in. There are $N$ such possible states. Each state has a probability of being measured given by $|c_i|^2$  with $c_i$ being the probability amplitude. Writing this as a state vector gives us 
 
-In general, our quantum computer can take a lot more than 2 possible outcomes. Thankfully we can just add a row to our column vector for every possible outcome. So we can describe our state in terms of each possible outcomes it can take. Our quantum computer can output any number up to some maximum.  We can write the state of any quantum computer in terms of all the possible states (numbers) we can get from it
-
-$$
-\ket{\psi} = \sum_{i = 0}^{N_1} c_i \ket{i}
-$$
-
-
-Where the index $i$ indicates a possible state we can observe the quantum system in. There are $N$ such possible states. Each state has a probability of being measured given by $|c_i|^2$  with $c_i$ being the probability amplitude. 
-
-Writing this as a state vector gives us 
-
-$$
-\ket{\psi} = \begin{bmatrix} c_0 \\ c_1 \\ c_2 \\ \vdots \\ c_{N-2} \\ c_{N-1} \end{bmatrix}
-$$
+$$ \ket{\psi} = \begin{bmatrix} c_0 \\ c_1 \\ c_2 \\ \vdots \\ c_{N-2} \\ c_{N-1} \end{bmatrix} $$
 
 A little note here: to model the state of a quantum computer requires keeping track of $N$ complex numbers. That doesn't seem too bad.  But for $n$ qubits we have $N = 2^n$ complex numbers to keep track of. Just 20 qubits would have more than a million complex amplitudes to keep track of! Adding 1 more qubit to get 21 qubits gives us more than 2 million complex amplitudes. 
 
-
 \subsection{ Bra: Row vectors with a complex twist }
-
 
 Another important quantity to define is the row vector version of the state vector. This is called a \textbf{bra} and is represented by $\bra{\psi}$. The big difference between normal row vectors and bras is that we always take the complex conjugate for every element of the column vector (ket). 
 
@@ -737,9 +698,7 @@ $$\ket{\psi} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i \end{bmatrix} $$
 
 Would have a bra given by 
 
-$$
-\bra{\psi} = (\ket{\psi}^*)^T 
-$$
+$$ \bra{\psi} = (\ket{\psi}^*)^T $$
 
 First, all the imaginary numbers in $\ket{\psi}$ get a minus sign in front 
 
@@ -762,19 +721,13 @@ $$
 \bra{\psi} = \begin{bmatrix} c_0^* & c_1^* & c_2^* & \dots & c_{N-2}^* & c_{N-1}^* \end{bmatrix}
 $$
 
-\section{ Probability of measurement}
-
+\section{ Measurement outcomes}
 
 One of the most important features of quantum computing is measurement. Whenever we do a quantum computation, we change the state of the qubits. The strange thing is that we never actually see the state itself! 
 
 In the example with the coins, we never see two coins with opposite sides up. The superposition can't be observed directly. Instead, we perform a measurement on the qubits to get some information out of them. The measurement has outcomes with different probabilities, described by the state vector. It's like the lift analogy in Chapter 1, the lift is never observed between two floors, we only see it at the floors. We also don't observe part of the lift on one floor and part of the lift on another floor. Something has gone terribly wrong if the lift is split across multiple floors! 
-. 
 
-For the coins, one may wish to know the probability of flipping the coin and getting heads or tails up. With Dirac notation, the probability of an outcome (heads up) can be calculated using the inner product (see section 3.2.4 for a refresher on the inner product).
-
-\subsection{ Probabilities come from the inner product}
-
-Using the coin example, the probability of the coin ending up in the heads state $\ket{H}$ can be calculated as
+For the coins, one may wish to know the probability of flipping the coin and getting heads or tails up. With Dirac notation, the probability of an outcome (heads up) can be calculated using the inner product (see section 3.2.4 for a refresher on the inner product). Using the coin example, the probability of the coin ending up in the heads state $\ket{H}$ can be calculated as
 
 $$ P(H) = |\braket{H|\psi}|^2  $$
 
@@ -782,12 +735,9 @@ The state we want to measure $\ket{H}$ is always on the left (in a bra) and the 
 
 First we do the inner product $\braket{H|\psi}$
 
-$$
-\braket{H|\psi} = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 0 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix}
-$$
+$$ \braket{H|\psi} = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 0 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix} $$
 
-$$ = \frac{1}{\sqrt{2}} (1 + 0 ) = \frac{1}{\sqrt{2}}$$
-
+$$ = \frac{1}{\sqrt{2}} (1 + 0 ) = \frac{1}{\sqrt{2}} $$
 Then we get the probability by taking the magnitude and squaring 
 
 $$ P(H) = \left| \frac{1}{\sqrt{2}} \right|^2 = \frac{1}{2} $$
@@ -821,13 +771,9 @@ Another way of thinking about this is that for any quantum system, the probabili
 
 This simplifies a lot of the maths. 
 
-\section{ Operators }
+\section{ Operators: A trip to the casino} \label{casino}
 
-\subsection{ A trip to the casino} \label{casino}
-
-An operator is a mathematical object that acts on a ket and returns a new ket. Operators are matrices that allow us to process quantum states. This is how we do quantum computing. 
-
-Our operators are denoted by a capital letter, such as  $\hat{O}$. They act on a quantum state $\ket{\psi}$ to return a new state $\ket{\psi'}$ as 
+An operator is a mathematical object that acts on a ket and returns a new ket. Operators are matrices that allow us to process quantum states. This is how we do quantum computing. Our operators are denoted by a capital letter, such as  $\hat{O}$. They act on a quantum state $\ket{\psi}$ to return a new state $\ket{\psi'}$ as 
 
 $$\hat{O}\ket{\psi} = \ket{\psi'}$$
 
@@ -864,22 +810,14 @@ $$
 \hat{F} =  \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}
 $$
 
+\section{Classical probability: What do we expect to get?}
 
-\section{What do we expect to get?}
-
-In life there are many processes where we want to predict something. For instance, a farmer would want to know how good their next harvest would be, or a stockbroker would want to know whether or not a stock is going to go up or down in price. In those cases, the farmer is not interested in the probability of getting an exact crop yield, but wants to know what yield they should expect. Quantum mechanics allows us to calculate these expectation values.
-
-\subsection{ Classical probability }
-
-What would we expect to get from our coin gambling example? 
+In life there are many processes where we want to predict something. For instance, a farmer would want to know how good their next harvest would be, or a stockbroker would want to know whether or not a stock is going to go up or down in price. In those cases, the farmer is not interested in the probability of getting an exact crop yield, but wants to know what yield they should expect. Quantum mechanics allows us to calculate these expectation values.What would we expect to get from our coin gambling example? 
 
 We know that half the time we will get \$1, and half the time we will lose \$1. 
 
 So our expected winnings, $\braket{W}$ would be
-$$
-\braket{W} = \frac{1}{2} \times 1 + \frac{1}{2} \times -1 
-=0
-$$
+$$\braket{W} = \frac{1}{2} \times 1 + \frac{1}{2} \times -1 =0 $$
 
 We win as much as we lose, so we'd expect to get nothing. 
 
@@ -890,7 +828,7 @@ $$ \braket{W} = \sum_{i = 0}^{N-1} X_i \times P(i) $$
 Where $X_i$ is the outcome for event $i$ with probability $P(i)$ . 
 
 
-\subsection{ A quantum description of probability }
+\section{ A quantum description of probability }
 
 So far this description of probability is entirely classical, even the use of angled brackets! A quantum description is more elegant. A perceptive reader might have noticed the similarities between the probability
 
@@ -981,9 +919,7 @@ Notice how $\ket{0}$ and $\ket{1}$ are separated by $180^{\circ} (\pi)$ on the s
 
 \textbf{The angle $\theta$ on the Bloch sphere gives the probabilities with angle $\theta/2$}
 
-$$
-P(\ket{0}) = |\braket{0|\psi}|^2 = (\cos{\theta/2})^2
-$$
+$$ P(\ket{0}) = |\braket{0|\psi}|^2 = (\cos{\theta/2})^2 $$
 Similarly for the probability of $\ket{1}$
 
 $$P(\ket{1}) = |\braket{0|\psi}|^2 = (\sin{\theta/2})^2$$
@@ -994,14 +930,9 @@ The states located on the ends of the axes are known as eigenstates. For $Z$ the
 
 In quantum mechanics, eigenstates are defined by a particular operator. When the operator acts on its eigenstate the same state is returned, multiplied by an eigenvalue. The most famous example is the Schrödinger equation,
 
-$$
-\hat{H}\ket{\psi} = E\psi
-$$
+$$ \hat{H}\ket{\psi} = E\psi $$
 
-Here the operator $\hat{H}$ is known as the Hamiltonian, which acts on the eigenstate $\ket{\psi}$ to return the energy $E$ associated with being in that state. 
-
-Coming back to our qubits, we can use $Z$ as an example operator. If the qubit is prepared in the initial starting state $\ket{0}$, we can apply the gate $Z$ to $\ket{0}$. Since $\ket{0}$ is an eigenstate of $Z$, the resulting quantum state is simply $ket{0}$ multiplied by 1 (the corresponding eigenvalue). Instead, if we started with $\ket{1}$, we would return $-1\ket{1}$. The eigenvalue of $-1$ cannot be measured, any more than the eigenvalue of $+1$ can be. 
-
+Here the operator $\hat{H}$ is known as the Hamiltonian, which acts on the eigenstate $\ket{\psi}$ to return the energy $E$ associated with being in that state. Coming back to our qubits, we can use $Z$ as an example operator. If the qubit is prepared in the initial starting state $\ket{0}$, we can apply the gate $Z$ to $\ket{0}$. Since $\ket{0}$ is an eigenstate of $Z$, the resulting quantum state is simply $ket{0}$ multiplied by 1 (the corresponding eigenvalue). Instead, if we started with $\ket{1}$, we would return $-1\ket{1}$. The eigenvalue of $-1$ cannot be measured, any more than the eigenvalue of $+1$ can be. 
 
 \section{It's not just a phase!} \label{It's not just a phase!}
 
@@ -1101,14 +1032,6 @@ Sometimes it is easier to perform gates by knowing what they do to the $\ket{0}$
 
 A more comprehensive list of gates \href{https://raw.githubusercontent.com/qiskit-community/qiskit-textbook/main/content/ch-states/supplements/single-gates-cheatsheet.pdf}{can be found here}
 
-
-\subsection{Aside: gates vs operators, computation and physics}
-
-In the last chapter, operators were introduced as matrices that act on a quantum state. In this chapter, it seems quantum gates do the same thing. This is true, all quantum gates are operators, but not all operators are quantum gates. This book is written in the language of quantum information procesing, where physical processes are abstracted away into idealised qubits. Physics is a theory of information, what it is that can be known about the universe, and so the language used, the mathematical framework, is generally equivalent to our idealised computations. As always, there are applications for which small details can become more convenient to adopt the physics perspective. 
-
-For instance, the creation operator $\hat{a}^\dagger$ creates a photon from the vacuum but can't be represented by a $SU(2)$ matrix. The momentum operator $\hat{p} = -i\hbar\frac{\partial}{\partial x}$ is a partial derivative existing in a continuous momentum Hilbert space of momentum states. Being able to map our physical world onto qubits, or moving from the physics perspective to the computational perspective, is the key skill in making use of quantum computers. Doing this mapping enables quantum simulation. It generally considered that quantum computers are more effective than classical computers in this mapping.  
-
-
 \section{Parametrised quantum gates }
 
 In addition to these fixed quantum gates, there are quantum gates we can specify ourselves. These gates are described by a parameter we can control to change what the gate does. These gates are very similar to nodes in a neural network where we can change the weights (we will see a lot more about these in a chapter on quantum machine learning).For instance, we might want to get more than a 50\% chance of measuring an output. We can see on the Bloch sphere that if we rotate our quantum state by some angle towards $\ket{0}$ or $\ket{1}$ we can boost the probability of measuring either state.
@@ -1152,6 +1075,12 @@ Intermediate representations are effective because the linear algebra by which o
 % \section{ Operators in Ket-Bra Form}
 
 % There is a very elegant way to express operators using Dirac notation. If one 
+
+\section{Gates vs operators, computation and physics}
+
+In the last chapter, operators were introduced as matrices that act on a quantum state. In this chapter, it seems quantum gates do the same thing. This is true, all quantum gates are operators, but not all operators are quantum gates. This book is written in the language of quantum information procesing, where physical processes are abstracted away into idealised qubits. Physics is a theory of information, what it is that can be known about the universe, and so the language used, the mathematical framework, is generally equivalent to our idealised computations. As always, there are applications for which small details can become more convenient to adopt the physics perspective. 
+
+For instance, the creation operator $\hat{a}^\dagger$ creates a photon from the vacuum but can't be represented by a $SU(2)$ matrix. The momentum operator $\hat{p} = -i\hbar\frac{\partial}{\partial x}$ is a partial derivative existing in a continuous momentum Hilbert space of momentum states. Being able to map our physical world onto qubits, or moving from the physics perspective to the computational perspective, is the key skill in making use of quantum computers. Doing this mapping enables quantum simulation. It generally considered that quantum computers are more effective than classical computers in this mapping.  
 
 \section{ Bonus: Beyond Bits }
 
@@ -1210,7 +1139,7 @@ If quantum computing was nothing more than a collection of qubits processed indi
 
 What makes qubits difficult to simulate is the interactions between them. Having qubits interact with one another allows for more complex algorithms. Thanks to entanglement, one qubit can control what happens to another. This has some interesting implications for quantum algorithms. 
 
-\section{Back to Binary }
+\section{Reading binary}
 
 To describe many qubits, we need to add something to Dirac notation. For instance, if we were to label our qubits alphabetically, we'd run out of letters after just 26 qubits. Thankfully, we can leverage the binary system from classical computing to describe as many qubits as we want to. Everyone is familiar with the decimal system where counting goes as 0,1,2,...,8,9 and then we repeat from 10,11,12,... . Computers, classical or quantum $^*$ count in base 2. Binary works the same way as the decimal system but instead the count repeats every 2. Numbers go as    
 
@@ -1219,8 +1148,6 @@ To describe many qubits, we need to add something to Dirac notation. For instanc
 Which in decimal would be 
 
 0,1,2,3,4,5,6,7 
-
-\subsection{ Reading binary }
 
 To read a binary number:  
   
@@ -1240,38 +1167,9 @@ To read a binary number:
 4. Adding $0 + 64 = 64$.
 5. The sum we get is
 
-$$
-0 + 2^6 +0  + 2^4 + 2^3+ 0 + 0 + 2^0 = 89 
-$$
+$$ 0 + 2^6 +0  + 2^4 + 2^3+ 0 + 0 + 2^0 = 89 $$
 
-Here we needed at least 6 digits in binary to represent a number with 2 digits in decimal. The decimal notation is much more efficient. 
-
-\subsection{Exercise 6.1}
-
-What would the following numbers be in decimal?
-
-a. 1111
-
-b. 1001
-
-c. 101101
-
-d. 0110
-
-\subsection{Exercise 6.2}
-
-What would the following numbers be in binary? 
-
-a. 1 
-
-b. 5
-
-c. 6 \newline
-
-
-\subsection{ Reading quantum states }
-
-Let's say we wanted to encode the number 5 onto a quantum state. 
+Here we needed at least 6 digits in binary to represent a number with 2 digits in decimal. The decimal notation is much more efficient. Let's say we wanted to encode the number 5 onto a quantum state. 
 
 We know $ 5 = 2^2 + 2^0$ so we can write 5 as 101 in binary. 
 
@@ -1287,20 +1185,7 @@ Here we use the convention where the first qubit ($2^0$) is on the right, with t
 
 This right to left notation can also be represented as a ket as $\ket{101}_{2,1,0} = \ket{1}_2\ket{0}_1\ket{1}_0$ where the subscript index specifies which qubit is in which state. Similarly, we can have our quantum gates given these subscripts so we can say which qubits they are acting on. 
 
-\subsection{6.2.3 Column vectors for multiple qubits}
-
-Keeping with the number 5, the state vector for this number 
-
-$$ \ket{5} = \ket{101} = \begin{bmatrix} 0 \\ 0\\ 0\\ 0\\ 0\\ 1\\0\\0 \end{bmatrix} $$
-
-For each qubit we add, the number of rows in this column vector doubles. This is what makes it difficult to simulate quantum algorithms on classical computers. 
-
-\subsection{Exercise 6.3}
-
-For n qubits, we need a vector with $2^n$ rows to describe the state. What shape of matrix (rows, columns) do we need to describe the operator (i.e. multi-qubit gate) that acts on this vector? 
-
 \section{ Multiple qubits, multiple gates }
-
 
 If we have multiple qubits, we can apply single qubit gates on each of them at a time. This is the same as having a bunch of single qubits on their own, each having their state changed by the qubit gate. The simplest case is two qubits. Let's begin with our qubits in the normal starting state of $\ket{q_1q_0} = \ket{00}$. We can apply a Hadamard gate on the first qubit, $q_0$ to change it to the superposition state $\ket{+}$
 
@@ -1332,25 +1217,30 @@ $$ \ket{\Psi} = \ket{0}\ket{\psi_1}...\ket{\psi_{n-1}}$$
 
 \section{ The Tensor Product }
 
-Mathematically there is a very satisfying way of representing this with linear algebra. The tensor product allows us to do this. This is a little beyond the scope of this course, but I'll include it anyway. 
-I've been a bit lazy with notation here, is
-$$ \ket{\psi_0}\ket{\psi_1} = \ket{\psi_0} \otimes \ket{\psi_1} $$
+Mathematically there is a very satisfying way of representing this with linear algebra. The tensor product allows us to do this. At this point some subscripts can be useful for labelling our qubits. The first (or zeroth) qubit can be denoted by a small $a$ on the right of the ket, the second (or first) qubit will have a little $b$ on the right. If qubits $a$ and $b$ are not entangled, the system of $ab$ can be described as a tensor product. 
+$$ \ket{\psi_a}_a\ket{\psi_b}_b = \ket{\psi_a}_a \otimes \ket{\psi_b}_b $$
 Where the symbol $\otimes$ represents the tensor product operation. 
 
-If we use vectors to represent this it looks like 
+Expanding our kets into column vectors
 
-$$ \ket{\psi_0} = \begin{bmatrix} a_0 \\ a_1 \end{bmatrix} ; \ket{\psi_1} = \begin{bmatrix} b_0 \\ b_1 \end{bmatrix} $$
+$$ \ket{\psi_a}_a = \begin{bmatrix} a_0 \\ a_1 \end{bmatrix} ; \ket{\psi_b}_b = \begin{bmatrix} b_0 \\ b_1 \end{bmatrix} $$
 
 $$
- \ket{\psi_0} \otimes \ket{\psi_1} = \begin{bmatrix} a_0\ket{\psi_1} \\ a_1\ket{\psi_1} \end{bmatrix}
+ \ket{\psi_a}_a \otimes \ket{\psi_b}_b = \begin{bmatrix} a_0\ket{\psi_b}_b \\ a_1\ket{\psi_b}_b \end{bmatrix}
 $$
 
-This is a new vector with $\ket{\psi_1}$ repeated twice, each time multiplied by a scalar $b_0$ or $b_1$. The final vector has 4 elements and looks like: 
+This is a new vector with $\ket{\psi_b}_b$ repeated twice, each time multiplied by a scalar $b_0$ or $b_1$. The final vector has 4 elements and looks like: 
 $$
- \ket{\psi_0} \otimes \ket{\psi_1} = \begin{bmatrix} a_0 b_0 \\ a_0 b_1 \\ a_1b_0 \\ a_1 b_1 \end{bmatrix}
+ \ket{\psi_a}_a \otimes \ket{\psi_b}_b = \begin{bmatrix} a_0 b_0 \\ a_0 b_1 \\ a_1b_0 \\ a_1 b_1 \end{bmatrix}
 $$
 
 So you can think of your new state as a 4-level quantum system. Every time we add another qubit, we tensor product it in, so the size of the vector doubles. This is where the exponential scaling of the state-space comes from. The same applies for multiple quantum gates in parallel. Our matrix increases by a factor of 2 in both the number of rows or columns. This is even better scaling!
+
+Keeping with the number 5, the state vector for this number 
+
+$$ \ket{5} = \ket{101} = \begin{bmatrix} 0 \\ 0\\ 0\\ 0\\ 0\\ 1\\0\\0 \end{bmatrix} $$
+
+For each qubit we add, the number of rows in this column vector doubles. This is what makes it difficult to simulate quantum algorithms on classical computers. 
 
 \section{ Entanglement } 
 
@@ -1389,7 +1279,7 @@ Entanglement can be created by gates that act on multiple qubits together to cre
 \end{tabular}
 \end{center}
 
-If we have two qubits $\ket{\psi_1}_1\ket{\psi_0}_0$ where qubit 0 is in the state $\ket{\psi_0}$ and qubit 1 is in the state $\ket{\psi_1}$, there are two CNOT's we can have. One where qubit 0 is the target and qubit 1 is control or the other way around, qubit 1 is the control and qubit 0 is the target. Each of these has a different 4x4 matrix
+If we have two qubits $\ket{psi_b}_b\ket{psi_a}_a$ where qubit 0 is in the state $\ket{psi_a}_a$ and qubit 1 is in the state $\ket{psi_b}_b$, there are two CNOT's we can have. One where qubit 0 is the target and qubit 1 is control or the other way around, qubit 1 is the control and qubit 0 is the target. Each of these has a different 4x4 matrix
 
 The first has the control on the 
 $$
@@ -1435,6 +1325,31 @@ We can have controlled quantum gates where there are more than one qubit as cont
 
 The Toffoli gate is the same as the controlled-not gate but with two qubits needing to be $\ket{1}$. Only if both the control qubits are in the state $\ket{1}$ for the $X$ to apply on the target qubit. Otherwise the Toffoli gate acts as identity. 
 
+\section{Chapter Exercises}
+
+\begin{enumerate}
+    \item What would the following numbers be in decimal?
+
+a. 1111
+
+b. 1001
+
+c. 101101
+
+d. 0110
+
+
+    \item What would the following numbers be in binary? 
+
+a. 1 
+
+b. 5
+
+c. 6 
+
+    \item For n qubits, we need a vector with $2^n$ rows to describe the state. What shape of matrix (rows, columns) do we need to describe the operator (i.e. multi-qubit gate) that acts on this vector? 
+\end{enumerate}
+
 \section{Chapter Summary}
 
 \begin{itemize}
@@ -1471,6 +1386,34 @@ Since classical bits are an abstraction of quantum bits (in the limit of continu
 \section{Basic building blocks}
 
 Just how the Bloch sphere can be used to represent states and gates, so too can circuit diagrams be used to encode the steps for any quantum circuit. 
+
+\section{Quantum Random Number Generators}
+
+Pick a random number between 1 and 10. 
+
+Was it 7?    
+
+Humans are really bad at picking random numbers. For instance, choosing 1 or 10 doesn’t seem so random because they are the largest and smallest numbers. A number picked near the middle intuitively feels more random than one at the higher or lower end. Even numbers seem less random than odd ones (though there is no reason for this to be true). 
+
+\subsection{Why do we want random numbers?}
+
+For much of human history, random numbers were only used in games of chance. Dice go back 5,000 years (Piovano, 2011/2016). During WW2, random numbers became an important statistical tool for von Neumann when he was working on the Manhattan project (Metropolis, 1987) and for use by the Germans in sending encrypted messages. 
+From the Manhattan project (Metropolis, 1987) came Monte Carlo methods. These are simulations that take a large number of samples from a model using random numbers to compute something that would be difficult to solve otherwise. They are a powerful and ubiquitous tool in physics, economics and data science. It became clear that random numbers were increasingly useful in areas of science, cryptography and statistics. More recently, with the abundance of private information sent over the internet, there is considerable need to generate a large number of random numbers for various encryption standards (Zhou \& Tang, 2011).
+
+\subsection{The limitations of pseudorandom number generators} 
+
+
+Pseudo-random number generators (PRNGs) and do not actually produce random numbers. Anyone who knows the seed (initial random number) and the algorithm can generate the entire sequence with complete certainty. If left to run for long enough, both the middle square method and linear congruential method will repeat. This is fine for video games where it is the feeling of randomness which matters, but not so great for encrypting communications (Li, 2013). With insider knowledge of the PRNG, an attacker could decrypt the communication.
+
+\subsection{Quantum RNG}
+
+Thankfully there are ways of generating truly random numbers based on physical processes. Atmospheric noise, the cosmic microwave background (the effect that caused static on old TVs) and radioactive decay are good examples. We can measure radio wave or microwave radiation, or the number of clicks from a Geiger counter.
+Quantum computers can also be used for this purpose. They are effectively controlled physical experiments leveraging quantum mechanics to perform some computation. Since randomness is an inherent part of quantum mechanics, quantum computers, unlike classical ones used by von Neumann, can serve as a True Random Number Generator (TRNG) (Jacak, 2021). This is because a quantum system can exist in a superposition of possible states, and following a measurement takes on one of these states. Whilst we can know the probability of the system taking each of these states, we cannot know with absolute certainty which it will take (Nielsen \& Chuang, 2000).
+
+Below is an example of how n random numbers (from 0 to nmax) can be generated using IBM’s quantum computer. The code creates a quantum circuit with enough qubits to represent the power of 2 greater than nmax. The qubits are then put into a superposition and measured to obtain the random number. This process is repeated 1000 times and sampled n times to produce the numbers.  
+
+The TRNG implemented here is hardly the most practical implementation. It is rather slow, requires access to IBM’s cloud infrastructure, is vulnerable to interception, and runs on a device cooled to nearly absolute zero. A more useful implementation of this concept was done 20 years ago by the Swiss company ID Quantique, using a photonic chip. Newer models can be integrated in desktop PCs with PCIe connectivity or even USB (ID Quantique, n.d.).
+
 
 \section{  1 + 1 = 2 (most of the time )}
 
@@ -1521,33 +1464,7 @@ For the circuit below, we'll have the top two qubits be the input, and the botto
 \item Quantum gates can have parameters and this allows us to make parametrised quantum circuits 
 
 \end{itemize}
-\chapter{Quantum Random Number Generators}
 
-Pick a random number between 1 and 10. 
-
-Was it 7?    
-
-Humans are really bad at picking random numbers. For instance, choosing 1 or 10 doesn’t seem so random because they are the largest and smallest numbers. A number picked near the middle intuitively feels more random than one at the higher or lower end. Even numbers seem less random than odd ones (though there is no reason for this to be true). 
-
-
-\section{Why do we want random numbers?}
-
-For much of human history, random numbers were only used in games of chance. Dice go back 5,000 years (Piovano, 2011/2016). During WW2, random numbers became an important statistical tool for von Neumann when he was working on the Manhattan project (Metropolis, 1987) and for use by the Germans in sending encrypted messages. 
-From the Manhattan project (Metropolis, 1987) came Monte Carlo methods. These are simulations that take a large number of samples from a model using random numbers to compute something that would be difficult to solve otherwise. They are a powerful and ubiquitous tool in physics, economics and data science. It became clear that random numbers were increasingly useful in areas of science, cryptography and statistics. More recently, with the abundance of private information sent over the internet, there is considerable need to generate a large number of random numbers for various encryption standards (Zhou \& Tang, 2011).
-
-\section{The limitations of pseudorandom number generators} 
-
-
-Pseudo-random number generators (PRNGs) and do not actually produce random numbers. Anyone who knows the seed (initial random number) and the algorithm can generate the entire sequence with complete certainty. If left to run for long enough, both the middle square method and linear congruential method will repeat. This is fine for videogames where it is the feeling of randomness which matters, but not so great for encrypting communications (Li, 2013). With insider knowledge of the PRNG, an attacker could decrypt the communication.
-
-\section{Quantum RNG}
-
-Thankfully there are ways of generating truly random numbers based on physical processes. Atmospheric noise, the cosmic microwave background (the effect that caused static on old TVs) and radioactive decay are good examples. We can measure radio wave or microwave radiation, or the number of clicks from a Geiger counter.
-Quantum computers can also be used for this purpose. They are effectively controlled physical experiments leveraging quantum mechanics to perform some computation. Since randomness is an inherent part of quantum mechanics, quantum computers, unlike classical ones used by von Neumann, can serve as a True Random Number Generator (TRNG) (Jacak, 2021). This is because a quantum system can exist in a superposition of possible states, and following a measurement takes on one of these states. Whilst we can know the probability of the system taking each of these states, we cannot know with absolute certainty which it will take (Nielsen \& Chuang, 2000).
-
-Below is an example of how n random numbers (from 0 to nmax) can be generated using IBM’s quantum computer. The code creates a quantum circuit with enough qubits to represent the power of 2 greater than nmax. The qubits are then put into a superposition and measured to obtain the random number. This process is repeated 1000 times and sampled n times to produce the numbers.  
-
-The TRNG implemented here is hardly the most practical implementation. It is rather slow, requires access to IBM’s cloud infrastructure, is vulnerable to interception, and runs on a device cooled to nearly absolute zero. A more useful implementation of this concept was done 20 years ago by the Swiss company ID Quantique, using a photonic chip. Newer models can be integrated in desktop PCs with PCIe connectivity or even USB (ID Quantique, n.d.).
 
 % \chapter{Quantum Algorithms}
 
@@ -1712,7 +1629,7 @@ For millennia, the only way to predict the timings of the tides was to consult p
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.8\textwidth]{Images/KelvinHarmonicAnalyser.jpg}
+    \includegraphics[width=0.8\textwidth]{images/KelvinHarmonicAnalyser.jpg}
     \caption{Kelvin's Harmonic Analyser: A mechanical device built in 1878 to compute Fourier series coefficients for tidal predictions. This machine could analyze up to 11 harmonic components simultaneously.}
     \label{fig:kelvin_analyser}
 \end{figure}
@@ -1735,7 +1652,7 @@ Digital computers are fundamentally limited in the precision they can achieve. F
 
 The phase on a qubit can be thought of like the time that has passed during some physical interaction. Like the time read by a clock, this phase contains some information about what happened to the qubit. Just like the time of day is defined by the number of seconds since midnight, the phase represents the total "time" that has passed for a qubit since the quantum circuit was started. When all the qubits are measured, the arrow on the Bloch sphere is projected onto either the top or bottom of the Bloch sphere. In the computational basis, the phase angle has no effect on the measurement angle. Whenever a qubit is measured the probabilities of measuring $\ket{0}$ or $\ket{1}$ are completely independent of whatever phase the qubit might have. When the measurement projects the qubit into either outcome, the phase is effectively destroyed. If the phase the qubit has right before it is measured doesn't change the probabilities, why does it matter?
 
-In chapter \ref{It's not just a phase!} the coin flip opeator was able to disntinguish between $\ket{+},\ket{-} $ by a second application. The flip operator for single qubit gates is better referred to as a Hadamard gate. For multiple qubits, the quantum Fourier transform implements this "flipping" where the phase on the qubit can be distinguished from later measurements in the computational basis. When we add more qubits, our computational basis (also known as the dimenstion of the Hilbert space) expands exponentially. Any measurement outcome of multiple qubits in the computational basis is returned as a bitstring. Converting this bitstring to decimal gives a more readable number, the discrete set of $0,1,2,...,2^n-1$ makes up the computational basis. Unlike the number of seconds on a classical clock (whether it has "hands" or a digital display) the phase on a qubit is analogue (so far as "time" itself is continuous). As with any analogue quantity, we can approximate phase as a binary number. For $n$ bits of precision, we can discretise phase by breaking down the equator of the Bloch sphere into a series of $N = 2^n$ equally spaced points. 
+In chapter \ref{It's not just a phase!} the coin flip operator was able to disntinguish between $\ket{+},\ket{-} $ by a second application. The flip operator for single qubit gates is better referred to as a Hadamard gate. For multiple qubits, the quantum Fourier transform implements this "flipping" where the phase on the qubit can be distinguished from later measurements in the computational basis. When we add more qubits, our computational basis (also known as the dimension of the Hilbert space) expands exponentially. Any measurement outcome of multiple qubits in the computational basis is returned as a bitstring. Converting this bitstring to decimal gives a more readable number, the discrete set of $0,1,2,...,2^n-1$ makes up the computational basis. Unlike the number of seconds on a classical clock (whether it has "hands" or a digital display) the phase on a qubit is analogue (so far as "time" itself is continuous). As with any analogue quantity, we can approximate phase as a binary number. For $n$ bits of precision, we can discretise phase by breaking down the equator of the Bloch sphere into a series of $N = 2^n$ equally spaced points. 
 
 \begin{figure}[ht!]
     \centering
@@ -1766,7 +1683,7 @@ Where $j$ is any of the number states in the computational (Z) basis. The invers
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=1.0\textwidth]{Images/F5_circuit.png}
+    \includegraphics[width=1.0\textwidth]{images/F5_circuit.png}
     \caption{Quantum circuit implementing the (inverse) QFT for 5 qubits. Each qubit undergoes a sequence of Hadamard and controlled phase gates. Not shown are the final swap gates needed to reverse the qubit order.}
     \label{fig:qft_circuit}
 \end{figure}

@@ -1,10 +1,10 @@
 # Interactive graph to show how 
 
 import numpy as np
-from numpy import * #Use with caution as this causes packages to mess with each other
+
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider, Button
-plt.style.use('seaborn')
+# plt.style.use('seaborn')
 # %matplotlib
 
 
