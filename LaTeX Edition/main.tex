@@ -829,6 +829,7 @@ Where $X_i$ is the outcome for event $i$ with probability $P(i)$ .
 
 
 \section{ A quantum description of probability }
+\label{sec:quantum_probability}
 
 So far this description of probability is entirely classical, even the use of angled brackets! A quantum description is more elegant. A perceptive reader might have noticed the similarities between the probability
 
@@ -1076,6 +1077,10 @@ Intermediate representations are effective because the linear algebra by which o
 
 % There is a very elegant way to express operators using Dirac notation. If one 
 
+\section{Expectation values revisited}
+
+In section \ref{}
+
 \section{Gates vs operators, computation and physics}
 
 In the last chapter, operators were introduced as matrices that act on a quantum state. In this chapter, it seems quantum gates do the same thing. This is true, all quantum gates are operators, but not all operators are quantum gates. This book is written in the language of quantum information procesing, where physical processes are abstracted away into idealised qubits. Physics is a theory of information, what it is that can be known about the universe, and so the language used, the mathematical framework, is generally equivalent to our idealised computations. As always, there are applications for which small details can become more convenient to adopt the physics perspective. 
@@ -1110,7 +1115,7 @@ Qudits are much less commonly used than qubits for a few reasons
         \item \( XYZ\ket{0} \)
     \end{enumerate}
     \item By using $\theta = \pi/2$ apply $R_y(\pi/2)$ to the state $\ket{1}$. What gate does $R_y(\pi/2)$ do? 
-    \item The X gate turns $\ket{0}$ to $\ket{1}$ and $\ket{1}$ to $\ket{0}$. By considering angles on the Bloch sphere, what is the angle $\theta$ such that $R_y(\theta) = X$
+    \item The X gate turns $\ket{0}$ to $\ket{1}$ and $\ket{1}$ to $\ket{0}$. By considering angles on the Bloch sphere, what is the angle $\theta$ such that $R_y(\theta) = Y$
     \item Which gate in the list above is represented by  $U(\theta, \phi, \lambda) = U(0,0,0)$ 
 \end{enumerate}
 
