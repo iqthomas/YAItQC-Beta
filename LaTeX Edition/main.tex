@@ -271,9 +271,13 @@ There are two square roots of $4$: $+2$ \& $-2$. For numbers that aren't integer
 
 Using some basic algebra we can factorise any surd (square root number) into a product of two surds $ \sqrt{ab} = \sqrt{a} \times \sqrt{b}$. This holds true for negative numbers allowing us to take the square root of any negative number by breaking it down into the square root of $-1$ and the positive magnitude of that number. This can be written as:
 
-$$ \sqrt{-a} = \sqrt{-1} \times \sqrt{a} $$
+\begin{equation}\label{eq:imaginary_factorization}
+\sqrt{-a} = \sqrt{-1} \times \sqrt{a}
+\end{equation}
 
-$$ \sqrt{-a} = i \sqrt{a} $$
+\begin{equation}\label{eq:imaginary_number}
+\sqrt{-a} = i \sqrt{a}
+\end{equation}
 For example the square root of $-4$ can be written as $+2i$, $-2i$.
 These numbers that can be written as $ai$ are known as imaginary numbers. 
 
@@ -281,7 +285,9 @@ These numbers that can be written as $ai$ are known as imaginary numbers.
 
 Imaginary numbers work similarly to the real numbers everyone uses on a  daily basis. One can divide, multiply, add \& subtract them just as you can for real numbers. What this also means is that any of $ \div ,\times, +, - $ operations can be applied to a combination of both real and imaginary numbers. For instance, the positive root of $-4$, $2i$ can be added to $3$ as $3 + 2i $. Any such number that can be written as a sum of a real and imaginary number is called a \textit{complex number}. More generally we can define this mathematically as:
 
-$$ z = a + ib $$
+\begin{equation}\label{eq:complex_number}
+z = a + ib
+\end{equation}
 
 Where $a$ and $b$ are purely real numbers. The real part of $z$ is known as $ Re(z) = a$ and similarly the imaginary component of is $ Im(z) = b$. 
 
@@ -317,7 +323,9 @@ In the figure below the complex number $z$ is shown along with its complex conju
 
  The magnitude of a complex number $z$ is denoted by two vertical bars as $|z|$. It is calculated the same was as the Euclidean distance as 
 
- $$|z| = \sqrt{x^2 + y^2}$$
+ \begin{equation}\label{eq:complex_magnitude}
+ |z| = \sqrt{x^2 + y^2}
+ \end{equation}
 
  With $z = x + yi$. 
 
@@ -339,7 +347,9 @@ In chapter 5, quantum gates will be described in terms of rotations around a hig
 
 \textbf{Euler's formula} is very useful and can be stated as
 
-$$ e^{i \theta} = cos(\theta) + i sin(\theta) $$
+\begin{equation}\label{eq:euler_formula}
+e^{i \theta} = cos(\theta) + i sin(\theta)
+\end{equation}
 
 Where $\theta$ is an angle in radians. The significance of this is that one can represent any complex number in this fashion simply by multiplying the left-hand side by some magnitude. For example, the complex number $ z = \frac{1}{2}( 1 + \sqrt{3}i)$ 
 
@@ -378,7 +388,9 @@ $$ 13 = \sqrt{ 5^2 + 12^2} $$
 
 Using Euler's formula, any complex number can be written in terms of its magnitude and an angle. This gives us 
 
-$$z = x + iy = re^{i\theta}$$ 
+\begin{equation}\label{eq:polar_form}
+z = x + iy = re^{i\theta}
+\end{equation} 
 
 Where $r$ is the magnitude of the complex number $r = |z| = \sqrt{x^2 + y^2}$ and $\theta$ is the angle made between the real and the imaginary plane
 
@@ -392,18 +404,20 @@ Vectors are objects that have both direction \& magnitude. Velocity is a vector 
 
 Imagine a car travelling diagonally across a road. At the same time, the car is travelling along the direction of the road as well as perpendicularly across the road. It can be said that the velocity of the car has a component pointing along the road and another component across the road. What makes vectors useful to work with is the fact that a vector has components. These are the individual magnitudes of the vector in each direction. We can encode the speed of the car along the road ($v_{alon}$)and the speed of the car across the road ($v_{acro}$) in a vector with two components: 
 
-$$
+\begin{equation}\label{eq:vector_definition}
 \ket{v} = \begin{bmatrix}v_{alon} \\ v_{acro}
 \end{bmatrix}
-$$
+
+\end{equation}
 
 Here the vector $\ket{v}$ has two components, $v_{alon}$ \& $v_{acro}$ so the vector has a dimension of 2. In 3D space, any point can be described by 3 vectors. In general, a vector can be of any dimension, with any number of components. 
 
 We can write any n-dimensional vector as
 
-$$
+\begin{equation}\label{eq:general_vector}
 \ket{v} = \begin{bmatrix} v_0 \\ v_1 \\ \vdots \\ v_{n-1} \end{bmatrix}
-$$
+
+\end{equation}
 
 Where the subscript $v_i$ indicates the i $^{th}$ component of $\ket{v}$. 
 
@@ -413,7 +427,9 @@ Where the subscript $v_i$ indicates the i $^{th}$ component of $\ket{v}$.
 
 It can be useful to add vectors. All this requires is adding the corresponding components of each vector. Adding two vectors, $\ket{a}$ \& $\ket{b}$
 
-$$\ket{a} + \ket{b} = \begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_{n-1} \end{bmatrix} + \begin{bmatrix} b_0 \\ b_1 \\ \vdots \\ b_{n-1} \end{bmatrix} = \begin{bmatrix} a_0 + b_0 \\ a_1 + b_1 \\ \vdots \\ a_{n-1} + b_{n-1} \end{bmatrix} $$
+\begin{equation}\label{eq:vector_addition}
+\ket{a} + \ket{b} = \begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_{n-1} \end{bmatrix} + \begin{bmatrix} b_0 \\ b_1 \\ \vdots \\ b_{n-1} \end{bmatrix} = \begin{bmatrix} a_0 + b_0 \\ a_1 + b_1 \\ \vdots \\ a_{n-1} + b_{n-1} \end{bmatrix}
+\end{equation}
 
 The same can be done in reverse, a vector can be split into different components. For example 
 
@@ -427,7 +443,9 @@ This can be useful for expressing a vector in terms of its components.
 
 Vectors can be made smaller or bigger by enlarging them by some scale factor. To make a vector bigger by some scale factor, the vector is multiplied by a scalar. To scale the vector $\ket{v}$ by some scalar quantity, $a$, this would be done by multiplying each component of the vector by the scalar factor. 
 
-$$ a \ket{v} = a\begin{bmatrix} v_0 \\ v_1 \\ \vdots \\ v_{n-1} \end{bmatrix} = \begin{bmatrix} a \times v_0 \\ a \times v_1 \\ \vdots \\ a \times v_{n-1} \end{bmatrix} $$
+\begin{equation}\label{eq:scalar_multiplication}
+a \ket{v} = a\begin{bmatrix} v_0 \\ v_1 \\ \vdots \\ v_{n-1} \end{bmatrix} = \begin{bmatrix} a \times v_0 \\ a \times v_1 \\ \vdots \\ a \times v_{n-1} \end{bmatrix}
+\end{equation}
 
 \subsection{The inner product}
 
@@ -478,7 +496,9 @@ Each element in $M$ has an index: a pair of numbers that gives the position in t
 
 $M$ could also be written as a collection of indices
 
-$$ M = \begin{bmatrix} M_{00} & M_{01}  \\ M_{10} & M_{11} \end{bmatrix} $$
+\begin{equation}\label{eq:matrix_indices}
+M = \begin{bmatrix} M_{00} & M_{01}  \\ M_{10} & M_{11} \end{bmatrix}
+\end{equation}
 
 
 \subsection{ Matrix-vector product} 
@@ -486,7 +506,9 @@ $$ M = \begin{bmatrix} M_{00} & M_{01}  \\ M_{10} & M_{11} \end{bmatrix} $$
 
 Matrices, or more generally 2D arrays of numbers, are useful for storing information. The pixels on a screen have colour intensity values that can be efficiently stored as a matrix where the number of rows and columns is equal to the horizontal and vertical pixels on a screen (1080 by 1920 is a popular choice). As well as storing information, matrices can be used to transform vectors. This is done using the matrix-vector product. The matrix $M$ acting on the vector $\ket{a}$ is denoted as $M\ket{a}$. The matrix multiplication is done by multiplying the corresponding elements of $M$ \& $\ket{a}$. Starting from the first row of $M$ we multiply out the elements of $M$ with the elements of $\ket{a}$ starting from the left and add them up. Let's call the transformed vector $\ket{a'}$. We can compute $\ket{a'}$ by doing the matrix-vector product of $M$ on $\ket{a}$ as
 
-$$ \ket{a'} = M\ket{a} $$
+\begin{equation}\label{eq:matrix_vector_product}
+\ket{a'} = M\ket{a}
+\end{equation}
 
 Explicitly calculating this gives us
 
@@ -511,9 +533,10 @@ For many matrix-vector products, we can go back and get the original vector from
 
 To get the original vector, we do the matrix-vector product, but with the transformed vector and the inverse of the matrix. This gives us 
 
-$$
+\begin{equation}\label{eq:inverse_matrix}
 M^{-1}\ket{a'} = \ket{a}
-$$
+
+\end{equation}
 
 By using our equation for $\ket{v'} = M\ket{a}$ from earlier, this gives us 
 
@@ -521,7 +544,9 @@ $$ M^{-1}M\ket{a} = \ket{a} $$
 
 Notice how $\ket{a}$ is completely unchanged from applying $M$ and then $M^{-1}$. The operation $M^{-1}M$ effectively does nothing. The same would be true if we applied $M^{-1}$ first and then $M$ as $MM^{-1}$. The general name for the "do nothing" matrix is the identity. The identity is
 
-$$M^{-1}M = MM^{-1} = I $$
+\begin{equation}\label{eq:identity_definition}
+M^{-1}M = MM^{-1} = I
+\end{equation}
 
 Before we had $\ket{a'} = M\ket{a}$. And now we would like to go backwards from $\ket{a'}$ to $\ket{a}$. This is done using the inverse of $M$: $M^{-1}$
 
@@ -533,21 +558,29 @@ $$ M^{-1}\ket{a'} = M^{-1}M\ket{a} = \ket{a} $$
 
 $M^{-1}$ is cancelling out $M$ so that there is no effect on $\ket{a}$. The matrix that represents this "no effect" is called the identity $I$ defined by 
 
-$$ I\ket{v} = \ket{v}$$
+\begin{equation}\label{eq:identity_property}
+I\ket{v} = \ket{v}
+\end{equation}
 
 As a matrix, the identity looks like 
 
-$$ I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$$
+\begin{equation}\label{eq:identity_matrix}
+I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+\end{equation}
 
 \subsection{ Unitary matrices} 
 
 For all quantum gates, an important property they have is that they are unitary. Unitary matrices have an inverse equal to their conjugate transpose (the dagger at the top).
 
-$$ U^\dagger = U^{-1} $$
+\begin{equation}\label{eq:unitary_definition}
+U^\dagger = U^{-1}
+\end{equation}
 
 This means 
 
-$$ U^\dagger U = U^{-1}U = I $$
+\begin{equation}\label{eq:unitary_property}
+U^\dagger U = U^{-1}U = I
+\end{equation}
 
 The conjugate transpose is the same process as it is to turn a ket (column vector) into a bra (row vector). Take You swap the rows and the columns and then replace every imaginary number with the negative version. 
 
@@ -630,24 +663,29 @@ How do we describe the state of our qubits? It is easy to think this would requi
 
 The coins still work as an example for the state vector. If the coin is heads up we can use the ket $\ket{H}$, if it's tails up it is $\ket{T}$. When the coin is spinning in the air, the superposition state (see section 1.3), this state can be represented by the state $\ket{\psi}$: 
 
-$$ \ket{\psi} = \frac{1}{\sqrt{2}}(\ket{H} + \ket{T}) $$
+\begin{equation}\label{eq:coin_superposition}
+\ket{\psi} = \frac{1}{\sqrt{2}}(\ket{H} + \ket{T})
+\end{equation}
 
 Since the coin has a $\frac{1}{2}$ probability of being in either heads or tails, you might have expected to see $\frac{1}{2}$ instead of $\frac{1}{\sqrt{2}}$. The reason for this is that in quantum mechanics, a state is described with an amplitude (the number outside the ket) proportional to the square root of the probability. 
 
 We can write out our kets as the simplest column vectors
 
-$$ \ket{H} = 
+\begin{equation}\label{eq:ket_heads}
+ \ket{H} = 
 \begin{bmatrix}
 0 \\ 1
-\end{bmatrix} $$
+\end{bmatrix} 
+\end{equation}
 
 Similarly, the tails side up can be represented by the ket
 
-$$
+\begin{equation}\label{eq:ket_tails}
 \ket{T} = 
 \begin{bmatrix}
 1 \\ 0
-\end{bmatrix} $$
+\end{bmatrix} 
+\end{equation}
 
 This allows $\ket{\psi} $ to be expanded as 
 
@@ -659,15 +697,18 @@ $$ \ket{\psi} = \frac{1}{\sqrt{2}}\left(\begin{bmatrix}
 
 By adding the corresponding elements of each vector, this can be simplified to
 
-$$ \ket{\psi} = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1 \end{bmatrix} = \ket{+}$$
+\begin{equation}\label{eq:plus_state}
+\ket{\psi} = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1 \end{bmatrix} = \ket{+}
+\end{equation}
 
 > This superposition state has its own symbol, $\ket{+}$.
 
 Instead, if there were a biased coin which had a probability of heads given by $P$, we would have a different state. The probability amplitude for $H$ is $\sqrt{P}$. The probability of getting tails would be $ P(T) = 1 - P(H)$ which gives $P(T) = 1 -P$. So our probability amplitude for $T$ is $\sqrt{1 - P}$. The state of our coin is then 
 
-$$
+\begin{equation}\label{eq:biased_state}
 \ket{\psi} = \sqrt{P}\ket{H} + \sqrt{1-P}\ket{T}
-$$
+
+\end{equation}
 
 We can write this as a column vector as
 
@@ -681,11 +722,15 @@ $$
 
 In general, our quantum computer can take a lot more than 2 possible outcomes. Thankfully we can just add a row to our column vector for every possible outcome. So we can describe our state in terms of each possible outcomes it can take. Our quantum computer can output any number up to some maximum number of outcomes.  We can write the state of any quantum computer in terms of all the possible states (numbers) we can get from it
 
-$$ \ket{\psi} = \sum_{i = 0}^{N_1} c_i \ket{i}$$
+\begin{equation}\label{eq:general_state}
+\ket{\psi} = \sum_{i = 0}^{N_1} c_i \ket{i}
+\end{equation}
 
 Where the index $i$ indicates a possible state we can observe the quantum system in. There are $N$ such possible states. Each state has a probability of being measured given by $|c_i|^2$  with $c_i$ being the probability amplitude. Writing this as a state vector gives us 
 
-$$ \ket{\psi} = \begin{bmatrix} c_0 \\ c_1 \\ c_2 \\ \vdots \\ c_{N-2} \\ c_{N-1} \end{bmatrix} $$
+\begin{equation}\label{eq:state_vector}
+\ket{\psi} = \begin{bmatrix} c_0 \\ c_1 \\ c_2 \\ \vdots \\ c_{N-2} \\ c_{N-1} \end{bmatrix}
+\end{equation}
 
 A little note here: to model the state of a quantum computer requires keeping track of $N$ complex numbers. That doesn't seem too bad.  But for $n$ qubits we have $N = 2^n$ complex numbers to keep track of. Just 20 qubits would have more than a million complex amplitudes to keep track of! Adding 1 more qubit to get 21 qubits gives us more than 2 million complex amplitudes. 
 
@@ -698,7 +743,9 @@ $$\ket{\psi} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i \end{bmatrix} $$
 
 Would have a bra given by 
 
-$$ \bra{\psi} = (\ket{\psi}^*)^T $$
+\begin{equation}\label{eq:bra_definition}
+\bra{\psi} = (\ket{\psi}^*)^T
+\end{equation}
 
 First, all the imaginary numbers in $\ket{\psi}$ get a minus sign in front 
 
@@ -717,9 +764,10 @@ $$
 
 Just as with the column vector, we can write a general expression for any bra
 
-$$
+\begin{equation}\label{eq:general_bra}
 \bra{\psi} = \begin{bmatrix} c_0^* & c_1^* & c_2^* & \dots & c_{N-2}^* & c_{N-1}^* \end{bmatrix}
-$$
+
+\end{equation}
 
 \section{ Measurement outcomes}
 
@@ -729,7 +777,9 @@ In the example with the coins, we never see two coins with opposite sides up. Th
 
 For the coins, one may wish to know the probability of flipping the coin and getting heads or tails up. With Dirac notation, the probability of an outcome (heads up) can be calculated using the inner product (see section 3.2.4 for a refresher on the inner product). Using the coin example, the probability of the coin ending up in the heads state $\ket{H}$ can be calculated as
 
-$$ P(H) = |\braket{H|\psi}|^2  $$
+\begin{equation}\label{eq:born_rule}
+P(H) = |\braket{H|\psi}|^2
+\end{equation}
 
 The state we want to measure $\ket{H}$ is always on the left (in a bra) and the state we have, $\psi$ is always on the right in a ket.
 
@@ -763,7 +813,9 @@ $$
 
 On the other hand, the probability of measuring a heads is 1. Whilst this result may seem obvious, it is worth emphasising that for any quantum state, the probability of measuring it in that state should be 1 (neglecting measurement error). This leaves us the important result
 
-$$ |\braket{\psi|\psi}|^2 = 1 $$
+\begin{equation}\label{eq:normalization}
+|\braket{\psi|\psi}|^2 = 1
+\end{equation}
 
 Another way of thinking about this is that for any quantum system, the probabilities of finding it in each of its states must add up to 1. 
 
@@ -775,7 +827,9 @@ This simplifies a lot of the maths.
 
 An operator is a mathematical object that acts on a ket and returns a new ket. Operators are matrices that allow us to process quantum states. This is how we do quantum computing. Our operators are denoted by a capital letter, such as  $\hat{O}$. They act on a quantum state $\ket{\psi}$ to return a new state $\ket{\psi'}$ as 
 
-$$\hat{O}\ket{\psi} = \ket{\psi'}$$
+\begin{equation}\label{eq:operator_action}
+\hat{O}\ket{\psi} = \ket{\psi'}
+\end{equation}
 
 This is just a matrix-vector product. 
 
@@ -799,16 +853,19 @@ $$
 
 Using the vector representation of $\ket{H}, \ket{T}$ we can write the matrix $\hat{Z}$
 
-$$ \hat{Z} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} $$
+\begin{equation}\label{eq:z_operator}
+\hat{Z} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+\end{equation}
 
 It turns out $\hat{Z}$ is an important quantum logic gate. Note: since the symbol $Z$ has no other major uses, it's common to see the operator without the hat as just $Z$.
 
 
 We can invent another operator to perform the coin flip, we will call $\hat{F}$ for now\footnote{We will meet this seemingly trivial flip operator in Chapter~\ref{Fourier} in a much more powerful form.} can be represented as 
 
-$$
+\begin{equation}\label{eq:flip_operator}
 \hat{F} =  \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}
-$$
+
+\end{equation}
 
 \section{Classical probability: What do we expect to get?}
 
@@ -823,7 +880,9 @@ We win as much as we lose, so we'd expect to get nothing.
 
 More generally we can write the expectation value in terms of the value of each outcome and the probability 
 
-$$ \braket{W} = \sum_{i = 0}^{N-1} X_i \times P(i) $$
+\begin{equation}\label{eq:expectation_value}
+\braket{W} = \sum_{i = 0}^{N-1} X_i \times P(i)
+\end{equation}
 
 Where $X_i$ is the outcome for event $i$ with probability $P(i)$ . 
 
@@ -845,15 +904,18 @@ We can even get $P(i) = |c_i|^2$ so perhaps we can express the expectation value
 
 The previous example with the \$1 gain/loss coin can be repeated with some quantum sauce. Recall the operator $Z$ that gave us the win/loss for heads and tails. We would like to work out the expected earnings. We know that we can get the amount earned $X_i$
 
-$$ X_i (\ket{i}) = Z\ket{i}$$
+\begin{equation}\label{eq:eigenvalue_equation}
+X_i (\ket{i}) = Z\ket{i}
+\end{equation}
 
 Where $i$ can either be $H$ or $T$. 
 And we can get the probability of getting $i$ from $\braket{i|\psi}$.
 
 Adding up all the probabilities gives us the important result
-$$
+\begin{equation}\label{eq:quantum_expectation}
 \braket{Z} = \braket{\psi|Z|\psi}
-$$
+
+\end{equation}
 
 We have defined the expectation value of the operator $Z$. Assuming our coin is unbiased, it has the general superposition state. We can then compute the expectation value as
 
@@ -897,9 +959,10 @@ $$ = \frac{1}{2} ( 1 - 1) = 0 $$
 
 Almost all articles or news reports talking about quantum computing start off by explaining how qubits are different from classical bits. Vauge statements about superposition and entanglement try to impress the reader with a general idea of how quantum computers could be useful. This chapter applies the maths from previous chapters to properly describe superposition. Entanglement requires a later chapter to be introduced mathematically. Earlier, the coin example was introduced with the heads \& tails outcomes we can observe. A qubit has the corresponding measurement outcomes $\ket{0}$ \& $\ket{1}$, we can just replace $\ket{H}$ with $\ket{0}$ and $\ket{T}$ with $\ket{1}$. 
 
-$$
+\begin{equation}\label{eq:computational_basis}
 \ket{0} = \begin{bmatrix} 1 \\ 0 \end{bmatrix} ; \ket{1} = \begin{bmatrix} 0 \\ 1 \end{bmatrix} 
-$$
+
+\end{equation}
 
 These two states are called the computational basis.Just as with the coins, our qubits can be in a superposition of $\ket{0}$ \& $\ket{1}$. We can have any probability of measuring $\ket{0}$ \& $\ket{1}$ (so long as all the probabilities are real positive numbers which add to 1). 
 
@@ -920,10 +983,14 @@ Notice how $\ket{0}$ and $\ket{1}$ are separated by $180^{\circ} (\pi)$ on the s
 
 \textbf{The angle $\theta$ on the Bloch sphere gives the probabilities with angle $\theta/2$}
 
-$$ P(\ket{0}) = |\braket{0|\psi}|^2 = (\cos{\theta/2})^2 $$
+\begin{equation}\label{eq:prob_zero}
+P(\ket{0}) = |\braket{0|\psi}|^2 = (\cos{\theta/2})^2
+\end{equation}
 Similarly for the probability of $\ket{1}$
 
-$$P(\ket{1}) = |\braket{0|\psi}|^2 = (\sin{\theta/2})^2$$
+\begin{equation}\label{eq:prob_one}
+P(\ket{1}) = |\braket{0|\psi}|^2 = (\sin{\theta/2})^2
+\end{equation}
 
 Up and down, the z-axis is where the $\ket{0}$ \& $\ket{1}$ are, for that reason the z-axis is known as the computational basis. In addition we have the x \& y axis which correspond to different states. A useful tool for understanding the Bloch sphere [can be found here](https://javafxpert.github.io/grok-bloch/)
 
@@ -931,7 +998,9 @@ The states located on the ends of the axes are known as eigenstates. For $Z$ the
 
 In quantum mechanics, eigenstates are defined by a particular operator. When the operator acts on its eigenstate the same state is returned, multiplied by an eigenvalue. The most famous example is the Schrödinger equation,
 
-$$ \hat{H}\ket{\psi} = E\psi $$
+\begin{equation}\label{eq:schrodinger}
+\hat{H}\ket{\psi} = E\psi
+\end{equation}
 
 Here the operator $\hat{H}$ is known as the Hamiltonian, which acts on the eigenstate $\ket{\psi}$ to return the energy $E$ associated with being in that state. Coming back to our qubits, we can use $Z$ as an example operator. If the qubit is prepared in the initial starting state $\ket{0}$, we can apply the gate $Z$ to $\ket{0}$. Since $\ket{0}$ is an eigenstate of $Z$, the resulting quantum state is simply $ket{0}$ multiplied by 1 (the corresponding eigenvalue). Instead, if we started with $\ket{1}$, we would return $-1\ket{1}$. The eigenvalue of $-1$ cannot be measured, any more than the eigenvalue of $+1$ can be. 
 
@@ -946,15 +1015,17 @@ $$
 In quantum computing, this operator is known as a Hadamard gate with symbol $H$. 
 If we apply $H$ to $\ket{0}$ we get the superposition state 
 
-$$
+\begin{equation}\label{eq:hadamard_zero}
 H\ket{0} = \frac{1}{\sqrt{2}} ( \ket{0} + \ket{1}) = \ket{+}
-$$
+
+\end{equation}
 
 Applying it to $\ket{1}$ gives us a different superposition state: 
 
-$$
+\begin{equation}\label{eq:hadamard_one}
 H\ket{1} = \frac{1}{\sqrt{2}} ( \ket{0} - \ket{1}) = \ket{-}
-$$
+
+\end{equation}
 
 We call this state $\ket{-}$ because of the minus sign between the $\ket{0}$ \& $\ket{1}$
 
@@ -980,13 +1051,17 @@ The phase is contained in the + or - sign between the $\ket{0}$ \& $\ket{1}$.
 
 The phase can be more than just $\pm 1$, it can be any complex number with magnitude 1. In general, any quantum state can have a phase $\phi$ 
 
-$$ \alpha\ket{0} + \beta e^{i\phi}\ket{1} $$
+\begin{equation}\label{eq:general_qubit}
+\alpha\ket{0} + \beta e^{i\phi}\ket{1}
+\end{equation}
 
 With $ 0 \leq \phi < 2\pi $
 
 We can use what we know from the Bloch Sphere to write $\alpha$ \& $\beta$ in terms of the angle $\theta$
 
-$$ \cos{(\theta/2)}\ket{0} + \sin{(\theta/2)} e^{i\phi}\ket{1} $$
+\begin{equation}\label{eq:bloch_parameterization}
+\cos{(\theta/2)}\ket{0} + \sin{(\theta/2)} e^{i\phi}\ket{1}
+\end{equation}
 
 Remember Euler's formula (section 3.1.2) which allows us to convert from the exponential to the complex number
 
@@ -1040,9 +1115,10 @@ In addition to these fixed quantum gates, there are quantum gates we can specify
 
 The matrix that does this rotation is known as $R_y$.
 
-$$
+\begin{equation}\label{eq:ry_gate}
 R_y(\theta) = \begin{bmatrix} \cos(\theta /2) & -\sin(\theta /2) \\ \sin(\theta /2) & \cos(\theta /2) \end{bmatrix}
-$$
+
+\end{equation}
 
 \textbf{The angle we give as input (on the Bloch Sphere) is $\theta$ the angle we perform the rotation is $\theta/2$.}
 
@@ -1050,9 +1126,10 @@ We also have rotations for the x \& y axis too. In fact, the X,Y gates are speci
 
 $R_z(\phi)$ (also known as P) is also useful because it allows us to give any phase to a qubit. 
 
-$$
+\begin{equation}\label{eq:rz_gate}
 R_z(\phi) = P(\phi) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i\phi} \end{bmatrix} = \begin{bmatrix} e^{-i\phi/2} & 0 \\ 0 & e^{i\phi/2} \end{bmatrix}
-$$
+
+\end{equation}
 
 This gives a phase shift of $\phi$ between $\ket{0}$ \& $\ket{1}$. 
 
@@ -1061,9 +1138,10 @@ This gives a phase shift of $\phi$ between $\ket{0}$ \& $\ket{1}$.
 
 Just as we can represent any single qubit state with two parameters, we can also represent any single qubit gate using parameters. 
 
-$$
+\begin{equation}\label{eq:general_unitary}
 U(\theta, \phi, \lambda) = \begin{bmatrix} \cos(\theta/2) & -e^{i\lambda}\sin(\theta/2) \\ e^{i\phi}\sin(\theta/2) & e^{i(\phi + \lambda)}\cos(\theta/2) \end{bmatrix} 
-$$
+
+\end{equation}
 
 Just as we can reach any point on the Bloch Sphere with $\theta$ \& $\phi$ we can get any quantum gate using $U$. 
 
@@ -1182,7 +1260,9 @@ As there are 3 digits, we need 3 qubits to represent this number.
 
 The qubit on the left is in state 1, the qubit in the middle is in state 0 and the qubit on the right is in state 1. 
 
-$$ \ket{101} = \ket{q_2q_1q_0} $$
+\begin{equation}\label{eq:qubit_ordering}
+\ket{101} = \ket{q_2q_1q_0}
+\end{equation}
 
 Here we use the convention where the first qubit ($2^0$) is on the right, with the next qubit one to the left and the last qubit the most to the right. This is what IBM uses and what we will use when programming quantum computers.
 
@@ -1214,7 +1294,9 @@ Such states where we can separate the qubits out are called product states (or p
 
 In general a product state can be written as 
 
-$$ \ket{\Psi} = \ket{\psi_0}\ket{\psi_1}...\ket{\psi_{n-1}}$$
+\begin{equation}\label{eq:product_state}
+\ket{\Psi} = \ket{\psi_0}\ket{\psi_1}...\ket{\psi_{n-1}}
+\end{equation}
 
 Let's say we measure the first qubit (qubit 0) and get a 0. The remaining qubits wouldn't be affected, so our new state would be 
 
@@ -1223,7 +1305,9 @@ $$ \ket{\Psi} = \ket{0}\ket{\psi_1}...\ket{\psi_{n-1}}$$
 \section{ The Tensor Product }
 
 Mathematically there is a very satisfying way of representing this with linear algebra. The tensor product allows us to do this. At this point some subscripts can be useful for labelling our qubits. The first (or zeroth) qubit can be denoted by a small $a$ on the right of the ket, the second (or first) qubit will have a little $b$ on the right. If qubits $a$ and $b$ are not entangled, the system of $ab$ can be described as a tensor product. 
-$$ \ket{\psi_a}_a\ket{\psi_b}_b = \ket{\psi_a}_a \otimes \ket{\psi_b}_b $$
+\begin{equation}\label{eq:tensor_product}
+\ket{\psi_a}_a\ket{\psi_b}_b = \ket{\psi_a}_a \otimes \ket{\psi_b}_b
+\end{equation}
 Where the symbol $\otimes$ represents the tensor product operation. 
 
 Expanding our kets into column vectors
@@ -1235,9 +1319,10 @@ $$
 $$
 
 This is a new vector with $\ket{\psi_b}_b$ repeated twice, each time multiplied by a scalar $b_0$ or $b_1$. The final vector has 4 elements and looks like: 
-$$
+\begin{equation}\label{eq:tensor_product_result}
  \ket{\psi_a}_a \otimes \ket{\psi_b}_b = \begin{bmatrix} a_0 b_0 \\ a_0 b_1 \\ a_1b_0 \\ a_1 b_1 \end{bmatrix}
-$$
+
+\end{equation}
 
 So you can think of your new state as a 4-level quantum system. Every time we add another qubit, we tensor product it in, so the size of the vector doubles. This is where the exponential scaling of the state-space comes from. The same applies for multiple quantum gates in parallel. Our matrix increases by a factor of 2 in both the number of rows or columns. This is even better scaling!
 
@@ -1287,30 +1372,40 @@ Entanglement can be created by gates that act on multiple qubits together to cre
 If we have two qubits $\ket{psi_b}_b\ket{psi_a}_a$ where qubit 0 is in the state $\ket{psi_a}_a$ and qubit 1 is in the state $\ket{psi_b}_b$, there are two CNOT's we can have. One where qubit 0 is the target and qubit 1 is control or the other way around, qubit 1 is the control and qubit 0 is the target. Each of these has a different 4x4 matrix
 
 The first has the control on the 
-$$
+\begin{equation}\label{eq:cnot_01}
 CNOT_{0, 1} = \begin{bmatrix} 1 & 0 & 0 & 0 \\
 0 & 0 & 0 & 1 \\
 0 & 0 & 1 & 0 \\
 0 & 1 & 0 & 0 \\
 \end{bmatrix}
-$$
 
-$$
+\end{equation}
+
+\begin{equation}\label{eq:cnot_10}
 CNOT_{1, 0} = \begin{bmatrix} 1 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 1 \\
 0 & 0 & 1 & 0 \\
 \end{bmatrix}
-$$
+
+\end{equation}
 
 \subsection{ Ring the Bell (states)}
 
 There are many ways we can entangle two qubits, and some qubits can be more entangled than others. The most common entangled states are known as the Bell states, and can be written like
 
-$$ \ket{\Phi^+} = \frac{1}{2} \left( \ket{00} + \ket{11} \right) $$
-$$ \ket{\Phi^-} = \frac{1}{2} \left( \ket{00} - \ket{11} \right) $$
-$$ \ket{\Psi^+} = \frac{1}{2} \left( \ket{01} + \ket{10} \right) $$
-$$ \ket{\Psi^-} = \frac{1}{2} \left( \ket{01} - \ket{01} \right) $$
+\begin{equation}\label{eq:bell_phi_plus}
+\ket{\Phi^+} = \frac{1}{2} \left( \ket{00} + \ket{11} \right)
+\end{equation}
+\begin{equation}\label{eq:bell_phi_minus}
+\ket{\Phi^-} = \frac{1}{2} \left( \ket{00} - \ket{11} \right)
+\end{equation}
+\begin{equation}\label{eq:bell_psi_plus}
+\ket{\Psi^+} = \frac{1}{2} \left( \ket{01} + \ket{10} \right)
+\end{equation}
+\begin{equation}\label{eq:bell_psi_minus}
+\ket{\Psi^-} = \frac{1}{2} \left( \ket{01} - \ket{01} \right)
+\end{equation}
 
 For each of these states, we can't separate out our two qubits as a product state. 
 
@@ -1672,17 +1767,24 @@ These angles can easily be computed as $$\phi_n^j = \frac{2\pi j}{2^n}$$. Starti
 
 Each point on the circle is separated from its neighbour by $\Delta\phi = \phi_n^{j+1} - \phi_n^j = \frac{2\pi}{N}$. To simplify the maths further on, the convention of using $\omega$ to represent the exponential of this distance between the phase points is given as 
 
-$$ \omega = e^{-i\Delta\phi} =  e^{-i2\pi /N} $$
+\begin{equation}\label{eq:omega}
+\omega = e^{-i\Delta\phi} =  e^{-i2\pi /N}
+\end{equation}
 
 In the computational basis, all these phases result in the same measurement outcomes. By transforming to the Fourier basis, the phases become distinguishable. These basis states, $\{\ket{\tilde{j}}\}$ can also be expressed as a tensor product as 
-$$  
+\begin{equation}\label{eq:fourier_basis}  
 \{\ket{\tilde{j}}\} = {\frac{1}{\sqrt{N}}\bigotimes_{k = 0}^{N-1}\left(\ket{0} + \omega^{jk}\ket{1} \right)}
-$$
+
+\end{equation}
 
 With the Fourier basis defined, the operator which translates between the Z basis and the Fourier basis is defined as the quantum Fourier transform
 
-$$ \hat{F}\ket{j}= \ket{\tilde{j}} $$
-$$ \hat{F_n} = \frac{1}{\sqrt{2^n}}\sum_{j,k =0}^{2^n-1}e^{i2\pi jk/2^n}\ket{\tilde{j}}\bra{j}  $$
+\begin{equation}\label{eq:qft_action}
+\hat{F}\ket{j}= \ket{\tilde{j}}
+\end{equation}
+\begin{equation}\label{eq:qft_operator}
+\hat{F_n} = \frac{1}{\sqrt{2^n}}\sum_{j,k =0}^{2^n-1}e^{i2\pi jk/2^n}\ket{\tilde{j}}\bra{j}
+\end{equation}
 
 Where $j$ is any of the number states in the computational (Z) basis. The inverse QFT acts the opposite way, such that any state in the Fourier basis is remapped back to the computational basis. More often than the regular QFT, it is the inverse QFT that is used, as states are typically prepared and measured in the Z basis. The circuit that implements $\hat{F}$ is as 
 
@@ -1699,7 +1801,9 @@ Where $j$ is any of the number states in the computational (Z) basis. The invers
 
 Since we know that $\omega$ is quantised, there is a limit to which the phase can be specified. Therefore, for some arbitrary phase angle $\phi$, and for a given number of qubits, there is a limit to the accuracy this phase can be estimated (using QPE). The maximum error to which this phase can be measured is given by the angular distance $\Delta$
 
-$$ \Delta = | \phi - 2\pi jk/N | $$
+\begin{equation}\label{eq:phase_error}
+\Delta = | \phi - 2\pi jk/N |
+\end{equation}
 
 In the best case, $\phi = 0 $, so simply picking $ j = k = 0 $ allows $\Delta = | 0 - 0 | = 0 $. In that case, there is no phase and therefore no error ($\Delta_{min} = 0$). In the worst case, $\phi_{worst}$ falls between two of the roots of unity: $\phi_{worst} = 2\pi jk/2N$. This maximises the angular distance $\Delta$
 
@@ -1711,12 +1815,15 @@ $$ \Delta_{max} = 2\pi \left| \frac{1}{2N} - \frac{1}{N} \right| $$
 
 Leaving us with the worst case error 
 
-$$ \Delta_{max} = \frac{\pi}{N} = \frac{\Delta\phi}{2} $$
+\begin{equation}\label{eq:max_phase_error}
+\Delta_{max} = \frac{\pi}{N} = \frac{\Delta\phi}{2}
+\end{equation}
 
 Assuming an ideal FSFT quantum computer, the (phase) limit of machine precision can be given by:
-$$
+\begin{equation}\label{eq:phase_precision_limit}
 \lim_{n \rightarrow \infty} \Delta_{max} = \frac{\pi}{2^n} \rightarrow 0
-$$
+
+\end{equation}
 
 Since $\Delta_{max}$ only depends on $n$, it might seem as simple as setting having as many qubits as possible such that $N = 2^n$ goes to infinity and $\Delta_{max}$ goes to zero. Alas, there are a few more considerations:
 
