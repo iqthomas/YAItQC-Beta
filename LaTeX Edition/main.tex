@@ -901,7 +901,7 @@ $$
 \ket{0} = \begin{bmatrix} 1 \\ 0 \end{bmatrix} ; \ket{1} = \begin{bmatrix} 0 \\ 1 \end{bmatrix} 
 $$
 
-These two states are called the computational basis.Just as with the coins, our qubits can be in a superposition of $\ket{0}$ \& $\ket{1}$. We can have any probability of measuring $\ket{0}$ \& $\ket{1}$ (so long as all the probabilities are real positive numbers which add to 1). 
+These two states are called the computational basis.Just as with the coins, our qubits can be in a superposition of $\ket{0}$ \& $\ket{1}$. We can have any probability of measuring $\ket{0}$ \& $\ket{1}$, so long as all the probabilities are real positive numbers which add to 1. 
 
 \section{ The Bloch Sphere }
 
@@ -910,9 +910,11 @@ So far the linear algebra used makes for an efficient computational tool to desc
 \begin{figure}[ht!]
     \centering
     \includegraphics[scale=0.5]{images/Bloch_Sphere.png}
-    \caption{The Bloch Sphere: a geometric representation of the state space of a qubit.}
+    \caption{The Bloch Sphere: a geometric representation of the state space of a qubit.\protect\footnote{A useful tool for understanding the Bloch sphere can be found here: \href{https://javafxpert.github.io/grok-bloch/}{https://javafxpert.github.io/grok-bloch/}.}}
     \label{fig:bloch_sphere}
 \end{figure}
+
+
 
 At the top of the sphere  is the state $\ket{0}$, at the bottom is the state $\ket{1}$. Our state $\ket{\psi}$ is somewhere in between so it is a superposition of $\ket{0}$ \& $\ket{1}$. The closer $\ket{\psi}$  is to the top, the greater the probability of measuring $\ket{0}$, the same is true for the bottom with $\ket{1}$. The angle $\theta$ between the $\ket{0}$ \& $\ket{\psi}$ gives us these probabilities. 
 
@@ -925,7 +927,7 @@ Similarly for the probability of $\ket{1}$
 
 $$P(\ket{1}) = |\braket{0|\psi}|^2 = (\sin{\theta/2})^2$$
 
-Up and down, the z-axis is where the $\ket{0}$ \& $\ket{1}$ are, for that reason the z-axis is known as the computational basis. In addition we have the x \& y axis which correspond to different states. A useful tool for understanding the Bloch sphere [can be found here](https://javafxpert.github.io/grok-bloch/)
+Up and down, the z-axis is where the $\ket{0}$ \& $\ket{1}$ are, for that reason the z-axis is known as the computational basis. In addition we have the x \& y axis which correspond to different states. 
 
 The states located on the ends of the axes are known as eigenstates. For $Z$ these are $\ket{0}$ \& $\ket{1}$. The $X$ axis has eigenstates of $\ket{+}$ and $\ket{-}$, and the $Y$ axis has eigenstates $\ket{+i}$ and $\ket{-i}$. 
 
@@ -933,7 +935,7 @@ In quantum mechanics, eigenstates are defined by a particular operator. When the
 
 $$ \hat{H}\ket{\psi} = E\psi $$
 
-Here the operator $\hat{H}$ is known as the Hamiltonian, which acts on the eigenstate $\ket{\psi}$ to return the energy $E$ associated with being in that state. Coming back to our qubits, we can use $Z$ as an example operator. If the qubit is prepared in the initial starting state $\ket{0}$, we can apply the gate $Z$ to $\ket{0}$. Since $\ket{0}$ is an eigenstate of $Z$, the resulting quantum state is simply $ket{0}$ multiplied by 1 (the corresponding eigenvalue). Instead, if we started with $\ket{1}$, we would return $-1\ket{1}$. The eigenvalue of $-1$ cannot be measured, any more than the eigenvalue of $+1$ can be. 
+Here the operator $\hat{H}$ is known as the Hamiltonian, which acts on the eigenstate $\ket{\psi}$ to return the energy $E$ associated with being in that state. Coming back to our qubits, we can use $Z$ as an example operator. If the qubit is prepared in the initial starting state $\ket{0}$, we can apply the gate $Z$ to $\ket{0}$. Since $\ket{0}$ is an eigenstate of $Z$, the resulting quantum state is simply $\ket{0}$ multiplied by 1 (the corresponding eigenvalue). Instead, if we started with $\ket{1}$, we would return $-1\ket{1}$. The eigenvalue of $-1$ cannot be measured, any more than the eigenvalue of $+1$ can be. 
 
 \section{It's not just a phase!} \label{It's not just a phase!}
 
@@ -1681,10 +1683,10 @@ $$
 
 With the Fourier basis defined, the operator which translates between the Z basis and the Fourier basis is defined as the quantum Fourier transform
 
-$$ \hat{F}\ket{j}= \ket{\tilde{j}} $$
+$$ \hat{F}\ket{j}= \ket{k} $$
 $$ \hat{F_n} = \frac{1}{\sqrt{2^n}}\sum_{j,k =0}^{2^n-1}e^{i2\pi jk/2^n}\ket{\tilde{j}}\bra{j}  $$
 
-Where $j$ is any of the number states in the computational (Z) basis. The inverse QFT acts the opposite way, such that any state in the Fourier basis is remapped back to the computational basis. More often than the regular QFT, it is the inverse QFT that is used, as states are typically prepared and measured in the Z basis. The circuit that implements $\hat{F}$ is as 
+Where $j,k$ are any of the number states in the computational (Z) basis. The inverse QFT acts the opposite way, such that any state in the Fourier basis is remapped back to the computational basis. More often than the regular QFT, it is the inverse QFT that is used, as states are typically prepared and measured in the Z basis. The circuit that implements $\hat{F}$ is as 
 
 \begin{figure}[ht!]
     \centering
@@ -1697,7 +1699,7 @@ Where $j$ is any of the number states in the computational (Z) basis. The invers
 % \newpage
 \section{A new limit of machine precision: Quantum Phase Estimation}
 
-Since we know that $\omega$ is quantised, there is a limit to which the phase can be specified. Therefore, for some arbitrary phase angle $\phi$, and for a given number of qubits, there is a limit to the accuracy this phase can be estimated (using QPE). The maximum error to which this phase can be measured is given by the angular distance $\Delta$
+In our discreete Fourier transform, $\omega$ is quantised, so there is a limit to which the phase of any qubit can be measured to. Therefore, for some arbitrary phase angle $\phi$, and for a given number of qubits, there is a limit to the accuracy this phase can be estimated. Using the QFT, the maximum error to which this phase can be measured is given by the angular distance $\Delta$
 
 $$ \Delta = | \phi - 2\pi jk/N | $$
 
