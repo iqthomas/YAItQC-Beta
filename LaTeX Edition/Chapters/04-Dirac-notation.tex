@@ -1,0 +1,272 @@
+\chapter{Dirac Notation}
+
+This chapter explains a bit of the framework for quantum computing using the maths from the last chapter. It's like learning the language of quantum computing, first the rules of the grammar were introduced in chapter 3, now that grammar is being applied to create sentences. 
+
+\section{ How to describe qubits}
+
+When using a computer every day, it's important to be able to extract useful information from the computer. For instance, reading emails requires being able to access the information in your inbox. Unlike reading emails, quantum computing works at the lowest level of the system. It would be like directly accessing the voltages across transistors that make up bits in a classical computer. Instead of working with bits, quantum computing works with qubits. To do anything at all with qubits, it's important to describe what state they're in. The state of a qubit is described by something known as a ket. 
+
+How do we describe the state of our qubits? It is easy to think this would require a very complicated mechanism. Thankfully, it is as simple as a column vector! The state of our quantum computer can be described with a \textbf{column vector known as a ket}. Because it is a state represented by a vector, we call this the \textbf{state vector}. Usually, the state of our quantum computer is given by the ket $\ket{\psi}$.
+
+The coins still work as an example for the state vector. If the coin is heads up we can use the ket $\ket{H}$, if it's tails up it is $\ket{T}$. When the coin is spinning in the air, the superposition state (see section 1.3), this state can be represented by the state $\ket{\psi}$: 
+
+$$ \ket{\psi} = \frac{1}{\sqrt{2}}(\ket{H} + \ket{T}) $$
+
+Since the coin has a $\frac{1}{2}$ probability of being in either heads or tails, you might have expected to see $\frac{1}{2}$ instead of $\frac{1}{\sqrt{2}}$. The reason for this is that in quantum mechanics, a state is described with an amplitude (the number outside the ket) proportional to the square root of the probability. 
+
+We can write out our kets as the simplest column vectors
+
+$$ \ket{H} = 
+\begin{bmatrix}
+0 \\ 1
+\end{bmatrix} $$
+
+Similarly, the tails side up can be represented by the ket
+
+$$
+\ket{T} = 
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix} $$
+
+This allows $\ket{\psi} $ to be expanded as 
+
+$$ \ket{\psi} = \frac{1}{\sqrt{2}}\left(\begin{bmatrix}
+0 \\ 1
+\end{bmatrix}+ \begin{bmatrix}
+1 \\ 0
+\end{bmatrix}\right) $$
+
+By adding the corresponding elements of each vector, this can be simplified to
+
+$$ \ket{\psi} = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1 \end{bmatrix} = \ket{+}$$
+
+> This superposition state has its own symbol, $\ket{+}$.
+
+Instead, if there were a biased coin which had a probability of heads given by $P$, we would have a different state. The probability amplitude for $H$ is $\sqrt{P}$. The probability of getting tails would be $ P(T) = 1 - P(H)$ which gives $P(T) = 1 -P$. So our probability amplitude for $T$ is $\sqrt{1 - P}$. The state of our coin is then 
+
+$$
+\ket{\psi} = \sqrt{P}\ket{H} + \sqrt{1-P}\ket{T}
+$$
+
+We can write this as a column vector as
+
+$$
+\ket{\psi} = \begin{bmatrix}
+\sqrt{1-P} \\ \sqrt{P}
+\end{bmatrix}
+$$
+
+\subsection{N-level quantum system}
+
+In general, our quantum computer can take a lot more than 2 possible outcomes. Thankfully we can just add a row to our column vector for every possible outcome. So we can describe our state in terms of each possible outcomes it can take. Our quantum computer can output any number up to some maximum number of outcomes.  We can write the state of any quantum computer in terms of all the possible states (numbers) we can get from it
+
+$$ \ket{\psi} = \sum_{i = 0}^{N_1} c_i \ket{i}$$
+
+Where the index $i$ indicates a possible state we can observe the quantum system in. There are $N$ such possible states. Each state has a probability of being measured given by $|c_i|^2$  with $c_i$ being the probability amplitude. Writing this as a state vector gives us 
+
+$$ \ket{\psi} = \begin{bmatrix} c_0 \\ c_1 \\ c_2 \\ \vdots \\ c_{N-2} \\ c_{N-1} \end{bmatrix} $$
+
+A little note here: to model the state of a quantum computer requires keeping track of $N$ complex numbers. That doesn't seem too bad.  But for $n$ qubits we have $N = 2^n$ complex numbers to keep track of. Just 20 qubits would have more than a million complex amplitudes to keep track of! Adding 1 more qubit to get 21 qubits gives us more than 2 million complex amplitudes. 
+
+\subsection{ Bra: Row vectors with a complex twist }
+
+Another important quantity to define is the row vector version of the state vector. This is called a \textbf{bra} and is represented by $\bra{\psi}$. The big difference between normal row vectors and bras is that we always take the complex conjugate for every element of the column vector (ket). 
+
+For instance, the state with ket
+$$\ket{\psi} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i \end{bmatrix} $$
+
+Would have a bra given by 
+
+$$ \bra{\psi} = (\ket{\psi}^*)^T $$
+
+First, all the imaginary numbers in $\ket{\psi}$ get a minus sign in front 
+
+ $$= \frac{1}{\sqrt{2}} \left(\begin{bmatrix} 1 \\ -i \end{bmatrix} \right)^T $$
+
+Then we transpose, shown by the $^T$, by swapping the rows with the columns. We're left with our bra
+
+$$\bra{\psi} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & -i \end{bmatrix} $$
+
+
+In the same way, we can get the coin bras. The $\bra{H}$ is the same as the ket $\ket{H} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$ but a row vector where the imaginary part of the complex numbers are all multiplied by $-1$. Since there are no imaginary numbers in $\ket{H}$, the bra $\bra{H}$ is just the transpose of the column vector as
+
+$$
+\bra{H} = (\ket{H}^*)^T = \begin{bmatrix} 0 & 1 \end{bmatrix}
+$$
+
+Just as with the column vector, we can write a general expression for any bra
+
+$$
+\bra{\psi} = \begin{bmatrix} c_0^* & c_1^* & c_2^* & \dots & c_{N-2}^* & c_{N-1}^* \end{bmatrix}
+$$
+
+\section{ Measurement outcomes}
+
+One of the most important features of quantum computing is measurement. Whenever we do a quantum computation, we change the state of the qubits. The strange thing is that we never actually see the state itself! 
+
+In the example with the coins, we never see two coins with opposite sides up. The superposition can't be observed directly. Instead, we perform a measurement on the qubits to get some information out of them. The measurement has outcomes with different probabilities, described by the state vector. It's like the lift analogy in Chapter 1, the lift is never observed between two floors, we only see it at the floors. We also don't observe part of the lift on one floor and part of the lift on another floor. Something has gone terribly wrong if the lift is split across multiple floors! 
+
+For the coins, one may wish to know the probability of flipping the coin and getting heads or tails up. With Dirac notation, the probability of an outcome (heads up) can be calculated using the inner product (see section 3.2.4 for a refresher on the inner product). Using the coin example, the probability of the coin ending up in the heads state $\ket{H}$ can be calculated as
+
+$$ P(H) = |\braket{H|\psi}|^2  $$
+
+The state we want to measure $\ket{H}$ is always on the left (in a bra) and the state we have, $\psi$ is always on the right in a ket.
+
+First we do the inner product $\braket{H|\psi}$
+
+$$ \braket{H|\psi} = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 0 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix} $$
+
+$$ = \frac{1}{\sqrt{2}} (1 + 0 ) = \frac{1}{\sqrt{2}} $$
+Then we get the probability by taking the magnitude and squaring 
+
+$$ P(H) = \left| \frac{1}{\sqrt{2}} \right|^2 = \frac{1}{2} $$
+
+Since all the probabilities of the coin landing on $\ket{H}$ or $\ket{T}$ must add to 1, for a biased or unbiased coin, it must be that $P(H) + P(T) = 1$. Let the probability of getting heads be $P$. This gives us a state of 
+$$
+\ket{\psi} = \begin{bmatrix} \sqrt{P} \\ \sqrt{1-P} \end{bmatrix}
+$$
+
+For any quantum state, the probability of measuring it to be in the state that it is must be 1. For example, if the coin were heads up, and nothing happened to the coin, the probability of measuring heads would be 1. The probability of getting a tails would be 0. This can be verified by working out the probability of measuring tails. The probability of measuring tails $P(T)$ is still given by the same equation 
+
+$$ P(T) = |\braket{T|\psi}|^2 $$ 
+
+where the coin is in the state $\ket{\psi}$ = $\ket{H}$. 
+
+$$  
+\left| \begin{bmatrix} 0 & 1 \end{bmatrix} \begin{bmatrix} 1 \\ 0 \end{bmatrix} \right|^2 
+$$
+
+$$
+= \left| (0 \times 1) + (1 \times 0) \right|^2 = 0 
+$$
+
+On the other hand, the probability of measuring a heads is 1. Whilst this result may seem obvious, it is worth emphasising that for any quantum state, the probability of measuring it in that state should be 1 (neglecting measurement error). This leaves us the important result
+
+$$ |\braket{\psi|\psi}|^2 = 1 $$
+
+Another way of thinking about this is that for any quantum system, the probabilities of finding it in each of its states must add up to 1. 
+
+\textbf{$ \braket{\psi|\psi} = 1 $ must hold for any normalised quantum state.}
+
+This simplifies a lot of the maths. 
+
+\section{ Operators: A trip to the casino} \label{casino}
+
+An operator is a mathematical object that acts on a ket and returns a new ket. Operators are matrices that allow us to process quantum states. This is how we do quantum computing. Our operators are denoted by a capital letter, such as  $\hat{O}$. They act on a quantum state $\ket{\psi}$ to return a new state $\ket{\psi'}$ as 
+
+$$\hat{O}\ket{\psi} = \ket{\psi'}$$
+
+This is just a matrix-vector product. 
+
+In gambling, the outcome of some event results in the gambler winning or losing money. Imagine a very simple game where every time you roll a heads you win \$1, every time you roll a tails, you lose \$1. 
+
+We can define an operator, let's call it $\hat{Z}$ that encodes the winnings and loses for each coin toss. 
+
+If we roll a heads $\ket{H}$ we should get +1, so we can encode that as 
+
+$$
+\hat{Z}\ket{H} = +1 \ket{H}
+$$
+
+Where the coefficient +1 is the winnings and the final state $\ket{H}$ is what we end up with. 
+
+Similarly for tails we lose a dollar so 
+
+$$
+\hat{Z}\ket{T} = -1 \ket{T}
+$$
+
+Using the vector representation of $\ket{H}, \ket{T}$ we can write the matrix $\hat{Z}$
+
+$$ \hat{Z} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} $$
+
+It turns out $\hat{Z}$ is an important quantum logic gate. Note: since the symbol $Z$ has no other major uses, it's common to see the operator without the hat as just $Z$.
+
+
+We can invent another operator to perform the coin flip, we will call $\hat{F}$ for now\footnote{We will meet this seemingly trivial flip operator in Chapter~\ref{Fourier} in a much more powerful form.} can be represented as 
+
+$$
+\hat{F} =  \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}
+$$
+
+\section{Classical probability: What do we expect to get?}
+
+In life there are many processes where we want to predict something. For instance, a farmer would want to know how good their next harvest would be, or a stockbroker would want to know whether or not a stock is going to go up or down in price. In those cases, the farmer is not interested in the probability of getting an exact crop yield, but wants to know what yield they should expect. Quantum mechanics allows us to calculate these expectation values.What would we expect to get from our coin gambling example? 
+
+We know that half the time we will get \$1, and half the time we will lose \$1. 
+
+So our expected winnings, $\braket{W}$ would be
+$$\braket{W} = \frac{1}{2} \times 1 + \frac{1}{2} \times -1 =0 $$
+
+We win as much as we lose, so we'd expect to get nothing. 
+
+More generally we can write the expectation value in terms of the value of each outcome and the probability 
+
+$$ \braket{W} = \sum_{i = 0}^{N-1} X_i \times P(i) $$
+
+Where $X_i$ is the outcome for event $i$ with probability $P(i)$ . 
+
+
+\section{ A quantum description of probability }
+\label{sec:quantum_probability}
+
+So far this description of probability is entirely classical, even the use of angled brackets! A quantum description is more elegant. A perceptive reader might have noticed the similarities between the probability
+
+$$ \braket{W} = \sum_{i = 0}^{N-1} X_i \times P(i) $$
+
+And the state vector
+
+$$
+\ket{\psi} = \sum_{i = 0}^{N_1} c_i \ket{i}
+$$ 
+
+We can even get $P(i) = |c_i|^2$ so perhaps we can express the expectation value in terms of the state vector and something that gives us the outcome for each state,$X$. 
+
+The previous example with the \$1 gain/loss coin can be repeated with some quantum sauce. Recall the operator $Z$ that gave us the win/loss for heads and tails. We would like to work out the expected earnings. We know that we can get the amount earned $X_i$
+
+$$ X_i (\ket{i}) = Z\ket{i}$$
+
+Where $i$ can either be $H$ or $T$. 
+And we can get the probability of getting $i$ from $\braket{i|\psi}$.
+
+Adding up all the probabilities gives us the important result
+$$
+\braket{Z} = \braket{\psi|Z|\psi}
+$$
+
+We have defined the expectation value of the operator $Z$. Assuming our coin is unbiased, it has the general superposition state. We can then compute the expectation value as
+
+$$
+\frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+$$
+$$
+= \frac{1}{2}\begin{bmatrix} 1 & 1 \end{bmatrix} \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+$$
+$$ = \frac{1}{2} ( 1 - 1) = 0 $$ 
+
+\section{Chapter Exercises}
+
+\begin{enumerate}
+    \item Imagine a biased coin which is three times more likely to land on tails than on heads. Write down the corresponding state vector for such a coin.
+    \item Using the definition of the measurement probability, calculate the probability of measuring heads and the probability of measuring tails. Verify that these add to 1.
+    \item Flip the coin. By applying the flip operator to a coin that is heads up, show that it gives us the superposition state.  
+    Hint: compute the matrix-vector product of $\hat{F}\ket{H}$.   
+    Bonus question: what would you get if you did the same with the coin starting tails up?  
+    \item Expectaion values. For this question, we're graduating from a coin to a dice. Let's call $N$ the number on a dice. Work out the expectation value by working out the number on each dice multiplied by the probability of rolling that number.
+
+\end{enumerate}
+
+
+\section{Chapter 4 Summary }
+
+\begin{itemize}
+
+    \item Quantum states can be represented by column vectors 
+    \item We can separate out a quantum state into orthogonal components 
+    \item The number in front of the component is the probability amplitude
+    \item The probability of measuring a quantum system in a given state is given by the square of the modulus of the inner product
+    \item The inner product of a quantum state with itself always has magnitude 1
+    \item Operators transform quantum states and are represented by matrices
+    \item The expectation value for any operator, $\hat{O}$  is given by $\braket{\hat{O}} = \braket{\psi|\hat{O}|\psi}$
+\end{itemize}

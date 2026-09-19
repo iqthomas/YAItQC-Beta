@@ -1,0 +1,106 @@
+
+\chapter{How many physicists does it take to change a light bulb?}
+
+In the early 20th century, a German physicist (by the cool name of Max Planck) was tasked with modelling the emission of light from a filament bulb. The bulb lights up when a wire gets hot enough to glow. This relationship between how hot the wire is and the colour of the light emitted is known as the black body radiation spectrum. It turns out, from his model, the energy emitted by an object with a finite temperature is not emitted in a continuous spectrum. That's to say rather than all possible wavelengths of light being emitted by this bulb only certain wavelengths were allowed. This is known as a discrete spectrum. Since each wavelength has a specific energy associated with it, as a consequence energy is emitted are chunks, or \textit{quanta}. We can't have energy between these chunks. It's a bit like taking the lift (elevator in American English). One can only get on or off the lift at specific heights corresponding to the floor level. Each floor is separated by a distance and the lift can go up or down in any multiple of these distances limited by the number of floors. In between those levels the doors of the lift won't open.
+\begin{figure}[ht!]
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Energy_Levels.png}
+        \caption{Energy levels are quantised, like floors in a building, the lift can only exit on discrete levels.}
+        \label{fig:energy_levels}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Light_bulb_quantised.png}
+        \caption{As Max Plank discovered light emitted by a bulb is quantised, corresponding to specific energy transitions.}
+        \label{fig:light_bulb_quantised}
+    \end{minipage}
+\end{figure}
+
+The quantisation of energy is where the word quantum comes from. Whilst this concept is less significant to quantum computing, it is still worth mentioning. The reason for this is that the transistor that powers all digital electronics is built upon this concept. Thus all computations using this technology (the integrated circuit) are computers running on quantum mechanics. This is not to say they are quantum computers simply that they are fundamentally built upon quantum physics, as are you, I, and everything we can see and touch. Quantum is nothing more than a limit, beyond which classical physics fails to provide an explanation. \textit{Quantum technologies supersede the limits of what is possible with classical technologies.}
+
+Beyond the quantisation of energy, there are quantum phenomena which are much more significant to quantum computing: \textit{superposition \& entanglement}. 
+
+\section{What happened to Schrödinger’s cat?}
+
+You may have heard of a very special cat associated with another German physicist, Schrödinger. In this analogy, a cat is kept inside a black box that the observer can't view inside. Within the box, there is also a vial of poison with a radioactive source. The radioactive source has an equal probability of decaying or not decaying in some time. If the source decays, the poison is released, and the cat dies. otherwise, the cat is just fine. Until the observer opens the box they don't know if the cat is dead or alive. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.4]{images/standard_cat.png}
+    \caption{Schrödinger's cat thought experiment: the cat is in a superposition of alive and dead until observed.}
+    \label{fig:schrodinger_cat}
+\end{figure}
+[2]
+
+Schrödinger came up with this analogy to explain why quantum mechanics was so controversial for physicists that had been able to do very well with classical physics until the turn of the 20th century. In quantum mechanics we call this particular state a \textit{superposition}. And this is the state we say the Schrödinger's cat is in before the box is opened.This analogy is effective but is far removed from the everyday experiences one has, so another analogy can be made that encapsulates the same physics. 
+
+It is as simple as tossing a coin.  
+
+While the coin spins in the air, someone looking at it can't resolve which side is facing upwards. It is a blur of motion where the side facing up can't be determined. It is as if the coin were in a combination of being \textit{both heads and tails at the same time}.  This coin can be described as being in a superposition of heads and tails. In reality, there are not two coins, one with the heads facing up and another with the tails facing up, but only one coin with this special state. When the coin lands, it faces either heads or tails up. Now there is no uncertainty in the state of the coin. If we were to cover the coin and then look at it again sometime later, it would still have the same side facing up. The superposition the coin was in before has been collapsed. The concept of looking at the coin, or opening the box, is what in quantum mechanics is known as \textit{performing a measurement}.
+
+\section{Spooky action at a distance}
+
+Historically, entanglement was described by Einstein as "spooky action at a distance". In a famous paper published in 1935, Einstein along with his coauthors, Boris Podolsky and Nathan Rosen, concluded that a quantum mechanical description of reality must be incomplete. 
+
+Instead of going through the theoretical and experimental physics developments, a simple analogy can serve as an introduction. Once the tools to describe qubits have been introduced,entanglement will be described in much more detail. For now, we continue with the coin analogy.The coins can work as a gross simplification, as the classical analogy can't accurately represent the intricacies of quantum theory. For this example, 2 coins will be required. 
+
+Tossing two unbiased coins is effectively the same as tossing the same coin twice and recording the outcome each time. Guessing whether one coin is H or T has a 50\% success rate. To guess both coins correctly will happen 25\% of the guesses. For the next step some removable adhesive, like Blu-tac, will be required. Imagine sticking the two coins together with each coin having the H facing outwards and the T's stuck together to make one coin twice as thick. Tossing this combined coin will always result in the top coin having the H facing upwards. The coin at the bottom must also have the H side facing into the ground. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.4]{images/Entanglement.png}
+    \caption{Two coins stuck together and spun can be used to describe entanglement.  }
+    \label{fig:coins}
+\end{figure}
+
+Instead of revealing the combined coin, the two coins are separated. Since the coin at the bottom has H facing into the ground, it must have the T side facing upwards. This leaves us 2 coins one H facing upwards and the other T facing upwards. Without revealing the coins they are shuffled. 
+
+At this point, guessing either of the coins would have a 50\% chance of getting the right outcome- the same as for one coin from a pair of simultaneously tossed coins. At this point, if only one of the coins is revealed, say the H coin, it is instantly known that the other one must be a T. Suddenly guessing the state of the second coin has a 100\% chance of success whereas with the separate coin tosses revealing one made no difference to guessing the other. These linked probabilities are analogous (with some significant caveats) to an entangled quantum state. Entanglement can be thought of as these linked probabilities- it is impossible to describe one coin without describing the other.
+
+Einstein argued that before the coins are revealed, they must have some side facing up. Looking at the coin only revealed information to us, the observer. In his view, some "hidden variables" were needed to make quantum mechanics fit with the classical intuition. Subsequent experiments demonstrated that this was not the case. It is as though both coins are not flat on the table but spinning in mid-air. Their spins are perfectly out of phase such that each coin is random right up until we see it. 
+
+% \section{Interpretations of Quantum Theory}
+
+% \subsection{The Copenhagen Interpretation}
+
+% The Copenhagen interpretation of quantum mechanics is the oldest and most boring. Simply put, it does not really do anything but state what the theory predicts. It is a bit agnostic because there is no attempt made to answer the big question of \textbf{why}.
+
+% \subsection{Marvellous Many Worlds}
+
+% One way of dealing with the paradoxes of superposition and entanglement is to make a rather bold proposition about the nature of reality. Since quantum mechanics is hard to reconcile with our intuitive understanding of the world, the many worlds' interpretation seeks to overhaul the concept of reality.
+
+% \subsection{Quantum Bayesianism}
+
+% If quantum mechanics is interpreted as a purely statistical reality, quantum Bayesianism is a very natural conclusion. 
+
+% \subsection{The Relational Interpretation}
+% The coins here are classical objects, but if we are loose with out concept of reality being real, whatever that means, we can reconcile the classical (or intuitive) with the quantum (or counter-intuitive). 
+
+% \textit{``If a tree falls in a forest and no one is around to hear it, does it make a sound ?''}
+
+% Perhaps an easier way of reformulating our understanding of reality, such that it is consistent with quantum theory, is to redefine how we consider properties to be defined. \newline
+
+% For example. In classical mechanics, speed, or velocity are properties of objects defined relative to something else. How fast someone walking along a moving train travels depends on the frame of reference. A passenger sitting on the same carriage would consider the person to be moving at a walking pace whereas a farmer standing in a field watching the train go by might describe the person as moving with a much faster speed. \newline
+
+% The relational interpretation boldly suggests that all physical properties of all objects are only defined relative to another object. 
+
+\section{Quantum Technologies}
+
+
+With some creativity, applications can be developed that offer some benefit to employing quantum effects. From the 1960's, first generation quantum technologies had a transformative impact on human development. The transistor, the development of Light Amplification by Stimulated Emission of Radiation, better known as LASER, and nuclear Magnetic Resonance Imaging (MRI) have reshaped our lives. 
+
+Where the second generation of quantum technologies come in is that they take advantage of superpositiion and entanglement.  This book is almost exclusively focussed on using the principles of quantum theory for developing computational approaches. Quantum computing can be thought of as the quest to improve our existing problem-solving machines by harnessing these quirks of nature. Alternative second generation quantum technologies leverage superposition and entanglement to build more sensitive sensors and to send information with better security guarantees, just as the first generation did. 
+
+\section{Chapter Summary} 
+
+\begin{itemize}
+
+    \item The word quantum comes from quantised or in discrete units 
+    \item A superposition occurs when a system must be described in terms of all the possible states it can occupy
+    \item Entanglement happens when the outcomes of two individually random systems are correlated more strongly than can be explained with classical physics 
+    \item Quantum technologies use superposition \& entanglement in their operation 
+    
+\end{itemize}

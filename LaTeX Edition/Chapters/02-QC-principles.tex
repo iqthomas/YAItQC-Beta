@@ -1,0 +1,113 @@
+
+
+\chapter{What is Quantum Computing?}
+
+Before we add quantum spice to our computers, it would be wise to first describe what it is that our classical computers do. Computers work by executing logical operations (think addition/subtraction/multiplication/...) that take the machine from a starting point to a finishing point. The starting point that is fed into the computer is conventionally known as the input and what the computer ends up with is usually referred to as the output. An \textit{algorithm} is a set of instructions that allow the computer to take the input and generate an output. For example, an algorithm for doubling a number could take an input of 3, multiply it by 2 and return an output of 6. 
+
+Going back to the coins here, this is a bit like laying them out in a row and then proceeding to shuffle and flip the coins according to a script that allows something to be done. For example, you could add 2 numbers expressed in binary by following a simple series of rules that allows for addition. This is similar to using an abacus as a calculator. Since the advent of the digital computer in the 1940's, these operations have been carried out by increasingly advanced machines to do more complex computations a lot faster.
+
+\section{More than flipping coins} 
+
+In the last chapter, the analogy of flipping coins was used to illustrate the phenomena on which classical information and quantum information behave differently. Alas, our quantum computers of today cannot be built from a handful of loose change. They are generally quite expensive to buy. Before outlining how quantum computers execute quantum algorithms, let's first consider some drawbacks of our coin quantum computers: 
+
+\begin{itemize}
+    \item Flipping coins is not very fast. Modern computers have clock speeds in the GHz or billions of complete clock cycles per second. We would need an astronomical number of coins to try and replicate that. 
+    
+    \item Tossing coins can only really be used to generate random numbers. Beyond the conventional deterministic computing operations we can already do, the only real advantage from quantum theory would be the `random' nature of the coin flips. 
+    
+    \item Sticking coins together is even slower than just flipping them. Not to mention the part where they get shuffled in a pseudo random way. 
+    
+    \item Coins take up a lot of space. Imagine a piece of paper the size of a laptop. A few dozen coins could realistically be placed on that surface. For a few hundred coins, you'd need a small table. By comparison, flash storage can store billions or trillions of bits of information in a form factor smaller than a fingernail. 
+ 
+\end{itemize}
+
+These coins represent the qubits in a quantum computer. We should be able to control these qubits faster and more precisely than with coins:
+\begin{itemize}
+\item Perform operations on qubits quickly 
+\item Have a precise control over the probabilities 
+\item Be able to effectively control multiple qubits at once
+\item Cause interference effects between the coins (this requires phase, to be introduced in chapter 5.1).
+\end{itemize}
+
+\section{Quantum Algorithms} 
+
+ Conventional computers are really great at what they do. The field of high-performance computing has had many decades to mature. According to Top500, an index tracking the most powerful supercomputers, the most powerful supercomputer, Fugaku is a \$1bn powerhouse. It consumes 29,899 kilowatts to power 7,630,848 cores. For context, a mid-range laptop today might have 6 cores and consume a total of around 20 watts of power. Both the laptop and the supercomputer execute algorithms that take some inputs and generate outputs. Whilst they are both excellent at solving a great many problems, there are two things they can't handle so well: superposition \& entanglement. 
+
+ Starting with a simple coin toss there are 2 possible outcomes. If we add a second coin there are 4 possible outcomes (HH, HT, TH, TT). As more and more coins are added, the number of possible outcomes doubles with each coin that is added. This number $N$, grows as $N = 2^n$. If we had 300 coins, that would mean a single toss has more possible outcomes than we estimate the total number of atoms in the universe. That's roughly 2 followed by 90 0's different combinations of H \& T. Now imagine tossing these coins 300 times...
+
+ A quantum computer could handle this problem easily. Instead of needing a universe of atoms, 300 qubits \textit{of sufficiently high quality} would be enough to run a quantum algorithm that could simulate these coins (including sticking of them together) to arbitrary precision. Quantum algorithms are similar to the input and output of classical algorithms but with the addition of superposition and entanglement in the middle.  If an algorithm doesn't feature superposition \& entanglement, it would always be better to use the classical computer. 
+
+
+\emph{Quantum computers are \textbf{not} faster versions of regular computers}
+
+\emph{ Quantum computers are \textbf{not} used to run conventional algorithms, or do things that are already very well done on a classical computer }
+
+For a quantum computer to be useful it has to be able to execute some algorithm that serves a purpose and take a time that is short enough for the solution to be valuable. Going beyond the limits of the coins, we can consider what an ideal quantum information processor should be capable of. Such an ideal quantum processor would be built of a collection of ideal quantum, bits, called qubits, along with the necessary classical information resources needed to precisely and reliably control them. Such a list might include these points:
+
+\begin{itemize}
+\item Perform quantum operations on individual qubits instantaneously with perfect precision
+\item Be capable of inputting and outputting classical and or quantum information
+\item Generate entanglement between any and all of the qubits instantaneously and with unlimited precision 
+\end{itemize}
+
+If physics were perfect, perfect qubits would exist in nature and we could just pluck qubits out of free space like taking grapes from the vine. Alas, the real world is a chaotic mess of information constantly coming into and out of existence. Everything takes some time, and nothing can be repeated the same way every time. 
+
+Whilst physics is far from perfect, the limits of physics are quite generous, at least in theory. Engineering can push the limits of technology ever closer to the physical limits. Meanwhile physicists derive clever tricks to beat the standard quantum limit and demonstrate these feats of precision experimentally. Physics and engineering requires the people, the time, and ultimately the funding to go beyond what is possible with today's technology. 
+
+\section{Applications of Quantum Computing}
+
+
+For quantum computing to be useful, there has to be a well-defined problem where using a quantum computer will help. Figuring out which problems can benefit from quantum computing, how to effectively use the quantum computer, and even just how to build and control such a machine remain very open questions. These questions pose a great practical challenge in making QC useful. Even still, in 2021 \href{https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/quantum-computing-funding-remains-strong-but-talent-gap-raises-concern}{over \$3 billion was invested into quantum computing}. Why is there so much hype around such an early-stage technology? 
+
+There are many industries expecting significant value creation from quantum computing: 
+
+\begin{itemize}
+        
+    \item Pharmaceuticals: Develop better medicine by simulating drugs more quickly \& accurately  
+    \item \hyperlink{https://www.youtube.com/watch?v=jA7iopqDm94}{Supply chain \& logistics}: Quantum computing to optimise supply chains 
+    \item Finance: Portfolio optimisation \& fraud detection by simulation of stochastic variables
+    \item Environmental: Simulation of chemistry for batteries, solar cells \& materials
+    \item Science: Simulation of quantum systems to better understand the universe
+    
+\end{itemize}
+
+Across each of these areas, and many that have yet to be discovered, established tech companies and start-ups are working to come up with new ideas on how QC can be used. Predicting when these solutions might become available, or how valuable they might be, is a guessing game for investors and governments. In addition to potential direct impacts, there are a lot of potential benefits to developing the technology to engineer qubits. Being able to measure qubits better can help develop quantum sensors with applications in healthcare \& navigation. 
+
+\section{Quantum Advantage} 
+
+If our conventional computers perform so many tasks better, there must be some motivation for quantum computing being such an exciting area of research. The maths is beautiful, the physics is exotic, and the engineers will never run out of problems to solve. But the funding has to come from somewhere. Quantum computing is expected to be more useful than a glorified coin tossing simulator. Despite the limitations in state-of-the-art quantum computing machines, it is known of a few valuable applications where quantum algorithms could \textit{theoretically outperform} the best available classical solution. Under this condition, we could define quantum advantage. \textbf{Quantum advantage occurs when adding a quantum computer gives significant benefit to the user compared to the best available purely classical alternative.} The choice of "significant benefit" is arbitrary and ultimately up to the people who use the computer. For example, a few different ways a quantum computer could add value: 
+
+\begin{itemize}
+    \item Speed: Solve a problem faster for better decision making
+    \item Accuracy: Provide more accurate solutions that are more useful 
+    \item Efficiency: Consume less energy over the entire process and thus cost less to run 
+    \item New approaches: Enable entirely new computational models \& solutions to solve problems that previously couldn't be solved
+\end{itemize}
+
+For any potential benefit, there are two methods by which we can claim a quantum advantage. The most common approach is theoretical. Problems that can be modelled mathematically in such a way that is convenient for a quantum computer can be targeted. The motivation for using the quantum computer provides inspiration for an algorithm. Theoretical models give us algorithms where the number of steps required to solve the problem can be predicted. Given the total length of this computation, assumptions can then be made about the hardware. For instance, we could specify how quickly a quantum computer can execute layers of a circuit and then infer how long it would take to finish the algorithm. Such an analysis is usually called a resource estimate, and can motivate roadmaps for hardware companies. 
+
+The comparison with classical computing adds another dimension to the quantum advantage. There will always be classical overheads on any quantum circuit, so a quantum circuit of the same number of operations as a classical circuit will always be slower. Theoretical analysis can account for this by predicting the total time to solution, accounting for some fixed overheads. 
+
+For a small problem, for example, finding the shortest path in a small village, the overhead of using a QC will likely never become viable for any advantage. Instead of considering fixed problem sizes (where the problem size is usually described by how many possible solutions exist) the theoretical analysis considers a range of problem sizes. As the number of possible solutions increases, the time taken for the computer, classical or quantum, to find a solution gets longer. If there is a speedup for a quantum algorithm, there is some problem size for which the quantum algorithm can solve it in fewer steps. Once the problem is bigger than this crossover point, the advantage of using the quantum computer grows. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale = 0.5]{images/Q_advantage.png}
+    \caption{By making assumptions about how quickly classical and quantum algorithms can solve problems, quantum advantage can be predicted theoretically}
+    \label{fig:quantum_advantage}
+\end{figure}
+
+
+
+Since classical computing is so much more mature, the timescales to execute steps of an algorithm can be on the order of nanoseconds (up to billions of steps per second). Quantum computers of today cannot match this speed and there remains a long way to reach comparable maturity. Taking into account limitations of the hardware makes quantum advantage much more difficult to achieve. Furthermore, since state-of-the-art quantum computers have fewer than 1,000 qubits (as of 2022), the maximum problem size that can be encoded onto the quantum computer remains very small. If the crossover size is beyond the limits of the quantum computer, there can be no quantum advantage (at least from speed). 
+
+In recent years, hardware providers have made a big emphasis of increasing the scale of their quantum computers, predominantly by raising qubit counts. As of the time of writing, there has been no practical demonstration of a problem with real world (outside physics) problem where using a quantum computer was better than using the best classical solution. As quantum computers become increasingly powerful it is hoped that this threshold will be crossed in the next few years...
+
+\section{Chapter Summary}
+\begin{itemize}
+    \item Quantum computers are more than just random objects that have superposition
+    \item Algorithms are sets of instructions that we give a computer to process information 
+    \item Quantum algorithms are like conventional algorithms but they allow us to use superposition \& entanglement 
+    \item For some applications, quantum algorithms have shown to be much better than classical algorithms
+    \item When a quantum computer completes a task better than the best available classical solution, there is quantum advantage
+\end{itemize}
