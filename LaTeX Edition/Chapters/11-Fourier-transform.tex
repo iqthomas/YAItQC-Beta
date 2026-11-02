@@ -1,0 +1,118 @@
+\chapter{The Fourier Transform} \label{Fourier}
+% \vspace{3cm}
+One of the most powerful tools mathematics has brought us is the ability to break down a large system into manageable components. This chapter describes a method that has literally transformed our understanding of the natural world, opening up opportunities in engineering and computer science that has delivered great benefit to humanity. 
+
+
+\section{Predicting the tides: From Newton to D-Day}
+
+As the earth spins on its axis, the gravitational attraction from the moon pulls ever so slightly more on one side of the planet than the other. At the same time, the centripetal acceleration of the rotation exerts a force on the oceans that is almost perfectly provided for by gravity. The combination of these two effects are what lead to the high and low tides occurring twice per day. In this simplified model, it might be assumed that the tides would occur at the same time each day. In reality, the timings of high and low tide drift from one day to the next. 
+
+For millennia, the only way to predict the timings of the tides was to consult previous observations. The earliest printed record going back to China in 1056. When he published the Principia, Isaac Newton introduced his theory of gravitation, providing the first scientific explanation for the motion of the tides. Nearly a century passed before Laplace described a set of equations that could model the slow dynamic response of the oceans to the gravitational attraction of the moon and the sun. The complexity of Laplaces equations meant that nearly another century was required before they could be solved. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/KelvinHarmonicAnalyser.jpg}
+    \caption{Kelvin's Harmonic Analyser: A mechanical device built in 1878 to compute Fourier series coefficients for tidal predictions. This machine could analyze up to 11 harmonic components simultaneously.}
+    \label{fig:kelvin_analyser}
+\end{figure}
+
+William Thompson, better known later as Lord Kelvin, developed Laplace's approach using the harmonic method. Kelvin's insight was to treat the complex solution as a series of oscillations that could be put together to form the complex solution. Harmonics, like how strings on a guitar can be plucked together to form a chord, consist of frequencies where each frequency carries some energy. The amplitudes and phases, like the notes and timings of a song, determine how the tidal behaviour can be predicted. Whilst this method made the problem solvable, it was still beyond what could be calculated by hand. To solve this problem, an analogue computer was designed and built.
+
+
+A far cry from the digital electronic computers of today, the brass machines of the 19th century was built on gears and spheres. A network of pulleys and wires connected the spheres to a pen that would graph out the solution onto paper. The 11 gears in turn correspond to 5 sets of 2 with a final gear corresponding to the mean water level. The speeds at which the shafts rotated was proportional to the frequencies of these physical effects. 
+
+\section{The Fast Fourier Transform}
+
+
+Soon after the second world war ended, the cold war began. Both digital computing and nuclear weapons would transform the nature of warfare. Like how nuclear weapons redefined the unit of explosive power to kilo and megatons of TNT, digital computers would redefine the information processing speed from manual or analogue calculations. 
+
+When a measurement is made, some data can be extracted from the measurement device. The data is typically a series of points, separated in increments of space and time. As the separation between each increment gets smaller, the resolution of this discrete dataset improves. 
+
+Digital computers are fundamentally limited in the precision they can achieve. Floating point numbers carry a finite number of bits. 32 bit for single precision, 64 for double precision. What this means is that every number stored on every computer is stored to a finite number of decimal points. Even for analogue computers, there is some arbitrary degree to which the precision of a given value can be stored. 
+
+\section{A quantum mechanical treatment}
+
+The phase on a qubit can be thought of like the time that has passed during some physical interaction. Like the time read by a clock, this phase contains some information about what happened to the qubit. Just like the time of day is defined by the number of seconds since midnight, the phase represents the total "time" that has passed for a qubit since the quantum circuit was started. When all the qubits are measured, the arrow on the Bloch sphere is projected onto either the top or bottom of the Bloch sphere. In the computational basis, the phase angle has no effect on the measurement angle. Whenever a qubit is measured the probabilities of measuring $\ket{0}$ or $\ket{1}$ are completely independent of whatever phase the qubit might have. When the measurement projects the qubit into either outcome, the phase is effectively destroyed. If the phase the qubit has right before it is measured doesn't change the probabilities, why does it matter?
+
+In chapter \ref{It's not just a phase!} the coin flip operator was able to disntinguish between $\ket{+},\ket{-} $ by a second application. The flip operator for single qubit gates is better referred to as a Hadamard gate. For multiple qubits, the quantum Fourier transform implements this "flipping" where the phase on the qubit can be distinguished from later measurements in the computational basis. When we add more qubits, our computational basis (also known as the dimension of the Hilbert space) expands exponentially. Any measurement outcome of multiple qubits in the computational basis is returned as a bitstring. Converting this bitstring to decimal gives a more readable number, the discrete set of $0,1,2,...,2^n-1$ makes up the computational basis. Unlike the number of seconds on a classical clock (whether it has "hands" or a digital display) the phase on a qubit is analogue (so far as "time" itself is continuous). As with any analogue quantity, we can approximate phase as a binary number. For $n$ bits of precision, we can discretise phase by breaking down the equator of the Bloch sphere into a series of $N = 2^n$ equally spaced points. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/f_7_indices.png}
+    \caption{Visualization of the phases that can be represented using $\hat{F}_n$. For $n$ qubits, the Fourier basis contains a discrete set of $2^n$ phases (points) represented on the complex plane.}
+    \label{fig:f7_indices}
+\end{figure}
+ 
+Each point in Figure~\ref{fig:f7_indices} corresponds to a specific phase. The angles chosen around the unit circle have a specific pattern. For $n$ qubits, each circle on \ref{fig:f7_indices} has $2^n$ points given by $\phi_n^0,\phi_n^1, ..., \phi_n^{N-1} $ 
+
+These angles can easily be computed as $$\phi_n^j = \frac{2\pi j}{2^n}$$. Starting from the horizontal line on the $n^{th}$ circle, $j = 0$ is the first point on the right side. $j = 1$ is reached by going counter-clockwise to the next point. Then going along each rotation of $j+1$ until the last point before the first point at $j = N-1 $. 
+
+Each point on the circle is separated from its neighbour by $\Delta\phi = \phi_n^{j+1} - \phi_n^j = \frac{2\pi}{N}$. To simplify the maths further on, the convention of using $\omega$ to represent the exponential of this distance between the phase points is given as 
+
+$$ \omega = e^{-i\Delta\phi} =  e^{-i2\pi /N} $$
+
+In the computational basis, all these phases result in the same measurement outcomes. By transforming to the Fourier basis, the phases become distinguishable. These basis states, $\{\ket{\tilde{j}}\}$ can also be expressed as a tensor product as 
+$$  
+\{\ket{\tilde{j}}\} = {\frac{1}{\sqrt{N}}\bigotimes_{k = 0}^{N-1}\left(\ket{0} + \omega^{jk}\ket{1} \right)}
+$$
+
+With the Fourier basis defined, the operator which translates between the Z basis and the Fourier basis is defined as the quantum Fourier transform
+
+$$ \hat{F}\ket{j}= \ket{k} $$
+$$ \hat{F_n} = \frac{1}{\sqrt{2^n}}\sum_{j,k =0}^{2^n-1}e^{i2\pi jk/2^n}\ket{\tilde{j}}\bra{j}  $$
+
+Where $j,k$ are any of the number states in the computational (Z) basis. The inverse QFT acts the opposite way, such that any state in the Fourier basis is remapped back to the computational basis. More often than the regular QFT, it is the inverse QFT that is used, as states are typically prepared and measured in the Z basis. The circuit that implements $\hat{F}$ is as 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=1.0\textwidth]{images/F5_circuit.png}
+    \caption{Quantum circuit implementing the (inverse) QFT for 5 qubits. Each qubit undergoes a sequence of Hadamard and controlled phase gates. Not shown are the final swap gates needed to reverse the qubit order.}
+    \label{fig:qft_circuit}
+\end{figure}
+
+
+% \newpage
+\section{A new limit of machine precision: Quantum Phase Estimation}
+
+In our discreete Fourier transform, $\omega$ is quantised, so there is a limit to which the phase of any qubit can be measured to. Therefore, for some arbitrary phase angle $\phi$, and for a given number of qubits, there is a limit to the accuracy this phase can be estimated. Using the QFT, the maximum error to which this phase can be measured is given by the angular distance $\Delta$
+
+$$ \Delta = | \phi - 2\pi jk/N | $$
+
+In the best case, $\phi = 0 $, so simply picking $ j = k = 0 $ allows $\Delta = | 0 - 0 | = 0 $. In that case, there is no phase and therefore no error ($\Delta_{min} = 0$). In the worst case, $\phi_{worst}$ falls between two of the roots of unity: $\phi_{worst} = 2\pi jk/2N$. This maximises the angular distance $\Delta$
+
+$$ \Delta_{max} = | 2\pi jk/2N - 2\pi jk/N | $$
+
+Since we can always rotate the Bloch sphere by some integer number of $ 2\pi/N $ without changing $ \Delta $, we can simplify this to take $j = k + 1$
+
+$$ \Delta_{max} = 2\pi \left| \frac{1}{2N} - \frac{1}{N} \right| $$
+
+Leaving us with the worst case error 
+
+$$ \Delta_{max} = \frac{\pi}{N} = \frac{\Delta\phi}{2} $$
+
+Assuming an ideal FSFT quantum computer, the (phase) limit of machine precision can be given by:
+$$
+\lim_{n \rightarrow \infty} \Delta_{max} = \frac{\pi}{2^n} \rightarrow 0
+$$
+
+Since $\Delta_{max}$ only depends on $n$, it might seem as simple as setting having as many qubits as possible such that $N = 2^n$ goes to infinity and $\Delta_{max}$ goes to zero. Alas, there are a few more considerations:
+
+\begin{itemize}
+   \item Connectivity: All-to-all connectivity is required to implement $\hat{F}$. This can be overcome with SWAP gates at some overhead that scales with $n$ depending on local (logical) qubit connectivity.
+   \item SPAM: State Preparation And Measurement. The quantum circuit has to start from the fiduciary state $\ket{0}^{\otimes n}$, prepare the phase corresponding to $\phi_{worst}$, carry out QPE and them perform a measurement in the computational basis. Any error in preparing the state or measuring it will in turn raise the error beyond $\Delta_{max}$. Whilst repeated measurements can reduce shot noise, SPAM fidelity will still be a limiting factor, especially if each shot takes a long time to compute.
+   \item Phase control: Controlled $R_z$ gates with at least $2\pi/N$ precision. Effectively this defines a limit on the maximum phase noise that can be tolerated by 2-qubit gates. Practically speaking, this sets stringent requirements on the fidelity of the Hadamard gates and the controlled Z rotations. In practice, this fidelity requirement demands effective quantum error correcting codes.
+   \item Coherence times: For any given $n$, $F$ requires $O(n^3)$ circuit layers. Thus the minimum depth of the circuit also scales with $O(n^3)$. Each layer of the circuit requires some time to be processed. Thus it is necessary to maintain a coherent phase for at least the time taken to complete the QPE algorithm.
+   \item Gate speed: QPE needs to act much faster than the qubit can dephase. The single qubit and entangling operations that comprise QPE must occur much, much faster than the phase of the qubit can change (say by $\phi_{worst}$ ).
+
+\end{itemize}
+
+\section{Faster QFTs}
+
+In almost all problems, the set of useful results is much smaller than the total set of possible results. There are many ways I can fit my clothes into my wardrobe, but very few where my shirts don't end up looking like an accordion when some poor soul opens the doors. Often, knowledge of the problem can provide a set of shortcuts. Instead of brute forcing every possible way to fit a shirt in a box, using a hanger greatly reduces the number of possible configurations. Where the quantum computers today have each qubit as a short-lived, expensive and noisy resource, clever tricks can be made to squeeze out every (qu)bit of performance. The considerations outlined in the previous section pose some daunting engineering challenges before the QFT can be of any practical use to anyone. As the FFT enabled 20th century computers to vastly expand their problem solving capability, perhaps faster QFTs can accelerate the adoption of quantum computing in the 21st century.  
+
+\section{Additional resources}
+\begin{itemize}
+    \item \href{https://learn.qiskit.org/course/ch-labs/lab-5-accuracy-of-quantum-phase-estimation}{Qiskit Lab 5: Accuracy of Quantum Phase Estimation}
+
+    \item \href{https://www.3blue1brown.com/lessons/fourier-transforms}{3blue1brown But What is the Fourier Transform? A visual introduction}
+\end{itemize}

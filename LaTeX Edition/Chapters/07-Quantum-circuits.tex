@@ -1,0 +1,97 @@
+\chapter{Quantum Circuits}
+
+For this chapter, it is recommended to view the Jupyter notebook version as a supplementary resource. \href{https://github.com/SolemnShark871/YAItQC/blob/main/Chapters/7_Quantum_circuits.ipynb}{You can find the link here.}
+
+\section{Introducing the circuit model}
+
+So far the description of quantum computing has been very algebraic. States are represented as vectors, gates are matrices, and by applying the corresponding indices we can implement single qubit gates on an array of qubits. This description has been fine so far because linear algebra is very efficient when it comes to single qubit operations. Even a CNOT can be done quite easily. Where linear algebra becomes inconvenient is when we want to talk about how we can solve problems, i.e. useful computation. For this we can turn to a new model. Using diagrams to encode a model can be more intuitive, for example, an electronic circuit can make it easier to represent a large and complicated electronic system. In much the same way, a quantum circuit is a diagram showing the operations that act on qubits. Whereas electronic circuit diagrams act like a shorthand that can be useful for calculating currents and voltages, quantum circuits act like a shorthand to help keep track of the states of qubits. All quantum circuits have 3 parts:
+
+\begin{enumerate}
+    \item Initialisation: Start your qubits in an initial quantum state (usually in $\ket{0}^{\otimes n}$)
+    \item Operation: Perform a series of single qubit gates and entangling operations.
+    \item Measurement: Measure the qubits and return their projected states as classical variables (a bitstring)
+\end{enumerate}
+
+Since classical bits are an abstraction of quantum bits (in the limit of continuous measurement), we can generalise the aforementioned steps to any classical algorithm too. In practice, any quantum computer will need to interact with a classical computer, so the circuit model is also convenient in representing cases where classical bits can be interfaced with quantum bits. 
+
+\section{Basic building blocks}
+
+Just how the Bloch sphere can be used to represent states and gates, so too can circuit diagrams be used to encode the steps for any quantum circuit. 
+
+\section{Quantum Random Number Generators}
+
+Pick a random number between 1 and 10. 
+
+Was it 7?    
+
+Humans are really bad at picking random numbers. For instance, choosing 1 or 10 doesn’t seem so random because they are the largest and smallest numbers. A number picked near the middle intuitively feels more random than one at the higher or lower end. Even numbers seem less random than odd ones (though there is no reason for this to be true). 
+
+\subsection{Why do we want random numbers?}
+
+For much of human history, random numbers were only used in games of chance. Dice go back 5,000 years (Piovano, 2011/2016). During WW2, random numbers became an important statistical tool for von Neumann when he was working on the Manhattan project (Metropolis, 1987) and for use by the Germans in sending encrypted messages. 
+From the Manhattan project (Metropolis, 1987) came Monte Carlo methods. These are simulations that take a large number of samples from a model using random numbers to compute something that would be difficult to solve otherwise. They are a powerful and ubiquitous tool in physics, economics and data science. It became clear that random numbers were increasingly useful in areas of science, cryptography and statistics. More recently, with the abundance of private information sent over the internet, there is considerable need to generate a large number of random numbers for various encryption standards (Zhou \& Tang, 2011).
+
+\subsection{The limitations of pseudorandom number generators} 
+
+
+Pseudo-random number generators (PRNGs) and do not actually produce random numbers. Anyone who knows the seed (initial random number) and the algorithm can generate the entire sequence with complete certainty. If left to run for long enough, both the middle square method and linear congruential method will repeat. This is fine for video games where it is the feeling of randomness which matters, but not so great for encrypting communications (Li, 2013). With insider knowledge of the PRNG, an attacker could decrypt the communication.
+
+\subsection{Quantum RNG}
+
+Thankfully there are ways of generating truly random numbers based on physical processes. Atmospheric noise, the cosmic microwave background (the effect that caused static on old TVs) and radioactive decay are good examples. We can measure radio wave or microwave radiation, or the number of clicks from a Geiger counter.
+Quantum computers can also be used for this purpose. They are effectively controlled physical experiments leveraging quantum mechanics to perform some computation. Since randomness is an inherent part of quantum mechanics, quantum computers, unlike classical ones used by von Neumann, can serve as a True Random Number Generator (TRNG) (Jacak, 2021). This is because a quantum system can exist in a superposition of possible states, and following a measurement takes on one of these states. Whilst we can know the probability of the system taking each of these states, we cannot know with absolute certainty which it will take (Nielsen \& Chuang, 2000).
+
+Below is an example of how n random numbers (from 0 to nmax) can be generated using IBM’s quantum computer. The code creates a quantum circuit with enough qubits to represent the power of 2 greater than nmax. The qubits are then put into a superposition and measured to obtain the random number. This process is repeated 1000 times and sampled n times to produce the numbers.  
+
+The TRNG implemented here is hardly the most practical implementation. It is rather slow, requires access to IBM’s cloud infrastructure, is vulnerable to interception, and runs on a device cooled to nearly absolute zero. A more useful implementation of this concept was done 20 years ago by the Swiss company ID Quantique, using a photonic chip. Newer models can be integrated in desktop PCs with PCIe connectivity or even USB (ID Quantique, n.d.).
+
+
+\section{  1 + 1 = 2 (most of the time )}
+
+A simple quantum circuit can be used to add 2 bits. This example illustrates a basic quantum algorithm, but you would never want to do this. There is no advantage in doing addition on a quantum computer, but this is a useful example of a quantum circuit. The adder should do the following: take two qubits and return their sum. This is simply adding 1 + 1 in binary.
+
+\begin{center}
+\begin{tabular}{ | c | c | c | c | c |}
+
+ Input 1 & Input 0 & $\rightarrow{}$ & Output 1 & Output 0 \\ 
+  
+ 0 & 0 &  & 0 & 0 \\ 
+ 
+ 0 & 1 &  & 0 & 1 \\
+ 
+ 1 & 0 &  & 0 & 1 \\
+ 
+ 1 & 1 &  & 1 & 0 \\
+ 
+  
+\end{tabular}
+\end{center}
+
+
+How do we construct a circuit that can implement this table? 
+
+For both inputs and outputs, each bit of information is represented as a qubit. The states of the output qubits, $q_2, q_3$ must be determined by the states of the input qubits to be added $q_0, q_1$. The circuit that implements this requires controlled nots and a new gate known as the Toffoli gate.
+
+For the circuit below, we'll have the top two qubits be the input, and the bottom two qubits be the output. This means when we measure our qubits, the bits to the left will be the output and the bits to the right will be the input. 
+
+\section{Quantum Teleportation}
+
+
+\section{Distributed Quantum Computing}
+
+% \includegraphics{images/quantum_adder.svg}
+
+\section{Chapter 7 Summary}
+
+\begin{itemize}
+\item A quantum circuit is a diagram that encodes all the steps of a quantum algorithm
+\item Quantum algorithms require 3 steps:
+\begin{enumerate}
+    \item Initialisation: setting all the qubits to $\ket{0}$
+    \item Gates: a series of single qubit and entangling (multi-qubit) gates
+    \item Measurement: collapsing the superposition of the qubits into either $\ket{0}$ or $\ket{1}$ to get a classical output 
+\end{enumerate}
+
+\item Quantum gates can have parameters and this allows us to make parametrised quantum circuits 
+
+\end{itemize}
